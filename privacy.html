@@ -14,13 +14,22 @@
       color: #111;
       background-color: #fafafa;
     }
-    h1, h2, h3 { font-weight: 700; }
-    h1 { font-size: 1.8rem; }
-    h2 { margin-top: 1.6rem; font-size: 1.2rem; }
+    h1, h2, h3 { font-weight: 700; color: #000; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+    h2 { margin-top: 1.6rem; margin-bottom: 0.4rem; font-size: 1.2rem; }
+    h3 { margin-top: 1.2rem; font-size: 1.05rem; }
     p, li { font-size: 0.95rem; }
     ul { padding-left: 1.2rem; }
     hr { border: none; border-top: 1px solid #ddd; margin: 1.2rem 0; }
     small { font-size: 0.8rem; color: #555; }
+    .highlight-box {
+      background-color: #f0f0f0;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      border-left: 4px solid #555;
+    }
   </style>
 </head>
 <body>
@@ -41,129 +50,158 @@
 
 <h2>1. Introduction</h2>
 <p>
-  This Privacy Policy explains how we collect and use information when you use the OneMinute Insight
-  mobile application (“Service”). We only collect data necessary to operate the Service.
+  This Privacy Policy explains how The Drawer at Dawn (“we”, “us”, or “our”) collects, uses, and protects your information when you use the OneMinute Insight mobile application (“Service”).
+  This policy is designed to comply with the <strong>Personal Information Protection Act (PIPA)</strong> of the Republic of Korea and global standards such as the <strong>GDPR</strong>.
 </p>
 
-<h2>2. Data Controller</h2>
-<p>
-  The Service is operated by The Drawer at Dawn (Business Registration Number: 162-50-00851).
+<h2>2. Information We Collect</h2>
+
+<h3>2.1 Account Information</h3>
+<ul>
+  <li><strong>Items:</strong> Email address, Name, Profile image (if provided), User ID.</li>
+  <li><strong>Collection Method:</strong> Collected via Supabase Authentication (e.g. Google login) upon registration.</li>
+</ul>
+
+<h3>2.2 Subscription & Transaction Information</h3>
+<ul>
+  <li><strong>Items:</strong> Plan type (Free/Trial/Premium), Start/End dates, Transaction IDs (RevenueCat, App Store, Google Play), Purchase history.</li>
+  <li><strong>Note:</strong> We do not store your actual credit card information directly; it is processed by the App Store or Google Play.</li>
+</ul>
+
+<h3>2.3 Usage & Technical Data</h3>
+<ul>
+  <li><strong>Items:</strong> Reading history (opened briefs), Quiz/Mission progress, Saved cards.</li>
+  <li><strong>Technical Data:</strong> IP address, Device type, OS version, App version, Access logs, Error traces.</li>
+  <li><strong>Tracking IDs:</strong> Advertising IDs (IDFA/GAID) may be collected by third-party tools (e.g. RevenueCat) for attribution, subject to your OS settings.</li>
+</ul>
+
+<h2>3. Purpose of Collection and Use</h2>
+<p>We process your data for the following specific purposes:</p>
+<ul>
+  <li><strong>Service Delivery:</strong> Authentication, providing content, managing subscriptions.</li>
+  <li><strong>Personalization:</strong> Tailoring news briefs and missions to your usage patterns.</li>
+  <li><strong>Service Improvement:</strong> Analyzing usage data to fix bugs and enhance features.</li>
+  <li><strong>Fraud Prevention:</strong> Preventing duplicate free trials or abuse.</li>
+  <li><strong>Notifications:</strong> Sending service updates or daily reminders (only with your consent).</li>
+</ul>
+
+<h2>4. Legal Basis for Processing</h2>
+<ul>
+  <li><strong>Contract Performance:</strong> To provide the Service you requested.</li>
+  <li><strong>Legal Obligation:</strong> To comply with tax or consumer protection laws.</li>
+  <li><strong>Legitimate Interests:</strong> Security, fraud prevention, and service improvement.</li>
+  <li><strong>Consent:</strong> For marketing notifications or optional data collection.</li>
+</ul>
+
+<h2>5. Data Retention and Deletion</h2>
+<p>We retain personal data only as long as necessary to fulfill the purposes above.</p>
+
+<h3>5.1 Retention Periods</h3>
+<ul>
+  <li><strong>Account Data:</strong> Retained until you delete your account or withdraw consent.</li>
+  <li><strong>Subscription Records:</strong> Retained for 5 years as required by the Act on the Consumer Protection in Electronic Commerce (Korea), if applicable.</li>
+  <li><strong>Server Logs:</strong> Retained for up to 3 months for security audits.</li>
+  <li><strong>Trial Prevention Data:</strong> A pseudonymized hash is retained for <strong>up to one (1) year</strong> after account deletion to prevent trial abuse.</li>
+</ul>
+
+<h2>6. Destruction Procedures and Methods (PIPA Compliance)</h2>
+<p>Once the retention period expires or the purpose of collection is achieved, we promptly destroy your personal data.</p>
+<ul>
+  <li><strong>Destruction Procedure:</strong> Data flagged for deletion is separated from active storage and permanently deleted after the retention period.</li>
+  <li><strong>Destruction Method:</strong> Electronic files are permanently deleted using technical methods that make the data unrecoverable. Printed materials (if any) are shredded.</li>
+</ul>
+
+<h2>7. Data Sharing and Third-Party Provision</h2>
+<p>We do not sell your personal data. We share data only with the following processors to operate the Service:</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 10px;">
+  <tr style="background-color: #f0f0f0;">
+    <th>Recipient</th>
+    <th>Purpose</th>
+    <th>Server Location (Region)</th>
+  </tr>
+  <tr>
+    <td><strong>Supabase</strong></td>
+    <td>Authentication & Database</td>
+    <td>Germany (EU)</td>
+  </tr>
+  <tr>
+    <td><strong>Railway</strong></td>
+    <td>Backend Hosting & Infrastructure</td>
+    <td>Netherlands (EU)</td>
+  </tr>
+  <tr>
+    <td><strong>RevenueCat</strong></td>
+    <td>Subscription Management</td>
+    <td>USA</td>
+  </tr>
+  <tr>
+    <td><strong>OpenAI (API)</strong></td>
+    <td>Content Summarization (AI)</td>
+    <td>USA</td>
+  </tr>
+  <tr>
+    <td><strong>Cloudflare</strong></td>
+    <td>Security & CDN</td>
+    <td>Global</td>
+  </tr>
+</table>
+<p style="margin-top: 8px; font-size: 0.85rem; color: #666;">
+  * Note: Location refers to the physical server region where data is processed. Both Germany and Netherlands are within the European Union (EU/EEA).
 </p>
-
-<h2>3. Information We Collect</h2>
-
-<h3>3.1 Account Information</h3>
-<ul>
-  <li>Email address (via Supabase Authentication)</li>
-  <li>Name, profile image (if provided by identity provider)</li>
-  <li>Supabase user ID</li>
-</ul>
-
-<h3>3.2 Subscription Information</h3>
-<ul>
-  <li>Plan type (free, trial, premium)</li>
-  <li>Start/end dates</li>
-  <li>RevenueCat / App Store / Google Play transaction IDs</li>
-  <li>Trial usage (via non-reversible hash)</li>
-</ul>
-
-<h3>3.3 Usage Data</h3>
-<ul>
-  <li>Opened briefs, quiz/missions progress</li>
-  <li>Saved cards</li>
-</ul>
-
-<h3>3.4 Notification Data</h3>
-<ul>
-  <li>Expo push token, device type</li>
-  <li>Notification preferences</li>
-</ul>
-
-<h3>3.5 Technical Data</h3>
-<ul>
-  <li>Device type, OS, app version</li>
-  <li>IP address, logs, error traces</li>
-</ul>
-
-<h2>4. How We Use Your Information</h2>
-<ul>
-  <li>To deliver the Service</li>
-  <li>To personalize briefs, quizzes, and missions</li>
-  <li>To manage subscription status</li>
-  <li>To send optional notifications</li>
-  <li>To improve the Service</li>
-  <li>To prevent fraud or trial abuse</li>
-</ul>
-
-<h2>5. Legal Basis</h2>
-<p>Depending on your jurisdiction:</p>
-<ul>
-  <li>Consent (e.g., notifications)</li>
-  <li>Contract performance (providing the Service)</li>
-  <li>Legitimate interests (security, improvement)</li>
-  <li>Legal obligations</li>
-</ul>
-
-<h2>6. One-Time Trial Enforcement</h2>
-<p>
-  We may store a <strong>non-reversible, non-identifiable hash</strong> of your account identifier
-  to ensure the one-time trial rule. This hash cannot be used to reconstruct your email or identify you.
-</p>
-
-<h2>7. Data Sharing</h2>
-<p>We do not sell personal data. We share data only with necessary providers:</p>
-<ul>
-  <li>Supabase</li>
-  <li>RevenueCat</li>
-  <li>Cloudflare</li>
-  <li>Hosting infrastructure (e.g., Railway)</li>
-</ul>
 
 <h2>8. International Data Transfers</h2>
 <p>
-  Our providers may process data in other countries. We use GDPR-compliant mechanisms (e.g., Standard
-  Contractual Clauses) where required.
+  To provide the Service, your data may be transferred to and processed in countries outside of your residence (e.g., EU Member States, United States).
+  We ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) or reliance on adequacy decisions where applicable (e.g., Korea-EU Adequacy Decision).
 </p>
 
-<h2>9. Data Retention</h2>
-<ul>
-  <li>Account data: kept while your account is active</li>
-  <li>Server logs: typically retained for up to 30 days</li>
-  <li>Hash-based trial records: kept only as needed to prevent repeated abuse</li>
-</ul>
-
-<h2>10. Data Security</h2>
-<ul>
-  <li>All data sent over encrypted HTTPS/TLS</li>
-  <li>Supabase provides secure database storage</li>
-</ul>
-
-<h2>11. Your Rights</h2>
-<ul>
-  <li>Access, correction, deletion of your data</li>
-  <li>Disable notifications</li>
-  <li>Withdraw consent</li>
-</ul>
-
-<h2>12. Children’s Privacy</h2>
+<h2>9. One-Time Trial Enforcement (Pseudonymized Data)</h2>
 <p>
-  The Service is not intended for children under the age of 16. We do not knowingly collect information
-  from children.
+  To enforce the "One-Time Premium Trial" policy, we generate a <strong>non-reversible, pseudonymized hash</strong> of your account identifier.
+  This hash is used solely to check trial eligibility and is not used to identify you personally. It is retained for up to 1 year.
 </p>
+
+<h2>10. Your Rights</h2>
+<p>You (and your legal representative if under 14) have the right to:</p>
+<ul>
+  <li>Request access to copies of your personal data.</li>
+  <li>Request correction or deletion of your data.</li>
+  <li>Withdraw consent (e.g., turn off notifications).</li>
+  <li>Object to processing.</li>
+</ul>
+<p>To exercise these rights, please contact us at <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>.</p>
+
+<h2>11. Children’s Privacy</h2>
+<p>
+  The Service is not intended for children under the age of 16. We do not knowingly collect information from children under 16.
+  If we discover such data has been collected without parental consent, we will delete such data <strong>without undue delay</strong>, in accordance with applicable law.
+</p>
+
+<h2>12. Security Measures</h2>
+<p>We implement the following measures to protect your data:</p>
+<ul>
+  <li><strong>Technical:</strong> Encryption of data in transit (HTTPS/TLS) and at rest; access controls.</li>
+  <li><strong>Administrative:</strong> Minimizing access to personal data to authorized personnel only.</li>
+</ul>
 
 <h2>13. Changes to this Policy</h2>
 <p>
-  Changes are effective when posted. Continued use indicates acceptance.
+  We may update this Privacy Policy. We will notify you of any <strong>material changes at least 7 days in advance</strong> through the App or via email.
 </p>
 
-<h2>14. Contact</h2>
+<h2>14. Privacy Officer & Contact (CPO)</h2>
 <p>
-  For privacy concerns, contact:
-  <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>
+  In accordance with the Personal Information Protection Act, we have designated a Chief Privacy Officer (CPO) to handle inquiries and complaints regarding personal data.
 </p>
+<div class="highlight-box">
+  <strong>Chief Privacy Officer (CPO):</strong> Jiyong Choi<br />
+  <strong>Department:</strong> The Drawer at Dawn<br />
+  <strong>Contact:</strong> <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>
+</div>
 
 <hr />
-<small>The English version takes precedence.</small>
+<small>This English version prevails over any translations. However, for users in Korea, this policy is interpreted to comply with the PIPA.</small>
 
 </body>
 </html>
