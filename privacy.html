@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 24px 16px 40px;
       line-height: 1.6;
@@ -16,12 +16,15 @@
     }
     h1, h2, h3 { font-weight: 700; color: #000; }
     h1 { font-size: 1.8rem; margin-bottom: 0.2rem; }
-    h2 { margin-top: 1.6rem; margin-bottom: 0.4rem; font-size: 1.2rem; }
+    h2 { margin-top: 1.7rem; margin-bottom: 0.4rem; font-size: 1.2rem; }
     h3 { margin-top: 1.2rem; font-size: 1.05rem; }
     p, li { font-size: 0.95rem; }
     ul { padding-left: 1.2rem; }
     hr { border: none; border-top: 1px solid #ddd; margin: 1.2rem 0; }
     small { font-size: 0.8rem; color: #555; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; margin-top: 10px; }
+    th, td { border: 1px solid #d8d8d8; padding: 8px; vertical-align: top; text-align: left; }
+    th { background: #f0f0f0; }
     .highlight-box {
       background-color: #f0f0f0;
       padding: 12px;
@@ -42,179 +45,204 @@
   Business Registration Number: <strong>162-50-00851</strong><br />
   Representative: <strong>Jiyong Choi</strong><br />
   Contact: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Last updated: December 2025
+  Last updated: August 24, 2026
 </p>
 
 <hr />
 
-<h2>1. Introduction</h2>
+<h2>1. Scope</h2>
 <p>
-  This Privacy Policy explains how The Drawer at Dawn (“we”, “us”, or “our”) collects, uses, and protects your information when you use the OneSpark mobile application (“Service”).
-  This policy is designed to comply with the <strong>Personal Information Protection Act (PIPA)</strong> of the Republic of Korea and global standards such as the <strong>GDPR</strong>.
+  This Privacy Policy explains how The Drawer at Dawn (“we”, “us”, or “our”) handles personal data when you use the OneSpark mobile application and related services (“Service”). We aim to process personal data transparently and in accordance with laws that apply to us and to our users, including the Personal Information Protection Act of the Republic of Korea and, where applicable as relevant provisions take effect, India’s Digital Personal Data Protection Act, 2023.
+</p>
+<p>
+  OneSpark is intended only for users who are <strong>18 years of age or older</strong>. We do not provide a parental-consent onboarding flow for minors.
 </p>
 
-<h2>2. Information We Collect</h2>
+<h2>2. Personal Data We Process</h2>
 
-<h3>2.1 Account Information</h3>
+<h3>2.1 Account and Authentication Data</h3>
 <ul>
-  <li><strong>Items:</strong> Email address, Name, Profile image (if provided), User ID.</li>
-  <li><strong>Collection Method:</strong> Collected via Supabase Authentication (e.g. Google login) upon registration.</li>
+  <li><strong>Account identifiers:</strong> user ID and email address.</li>
+  <li><strong>OAuth profile data:</strong> name and profile image if supplied by your sign-in provider and made available through Supabase Authentication.</li>
+  <li><strong>Authentication/session data:</strong> tokens and session information needed to keep you signed in securely.</li>
 </ul>
 
-<h3>2.2 Subscription & Transaction Information</h3>
+<h3>2.2 Subscription and Trial Data</h3>
 <ul>
-  <li><strong>Items:</strong> Plan type (Free/Trial/Premium), Start/End dates, Transaction IDs (RevenueCat, App Store, Google Play), Purchase history.</li>
-  <li><strong>Note:</strong> We do not store your actual credit card information directly; it is processed by the App Store or Google Play.</li>
+  <li>Plan type, subscription status, trial dates, subscription start/end dates, and payment-provider metadata.</li>
+  <li>Store or RevenueCat identifiers associated with a purchase or subscription, such as transaction/order identifiers and webhook event metadata.</li>
+  <li>We do <strong>not</strong> store your full payment-card number. Payments are processed by Apple App Store or Google Play and their payment partners.</li>
 </ul>
 
-<h3>2.3 Usage & Technical Data</h3>
+<h3>2.3 Challenge, Archive, and Preference Data</h3>
 <ul>
-  <li><strong>Items:</strong> Reading history (opened briefs), Quiz/Mission progress, Saved cards.</li>
-  <li><strong>Technical Data:</strong> IP address, Device type, OS version, App version, Access logs, Error traces.</li>
-  <li><strong>Tracking IDs:</strong> Advertising IDs (IDFA/GAID) may be collected by third-party tools (e.g. RevenueCat) for attribution, subject to your OS settings.</li>
+  <li>Quiz answers and results, mission-completion records, streak/progress information, and saved cards.</li>
+  <li>Settings needed to operate the Service, such as timezone and notification preferences.</li>
 </ul>
 
-<h2>3. Purpose of Collection and Use</h2>
-<p>We process your data for the following specific purposes:</p>
+<h3>2.4 Notification and Device Data</h3>
 <ul>
-  <li><strong>Service Delivery:</strong> Authentication, providing content, managing subscriptions.</li>
-  <li><strong>Personalization:</strong> Tailoring news briefs and missions to your usage patterns.</li>
-  <li><strong>Service Improvement:</strong> Analyzing usage data to fix bugs and enhance features.</li>
-  <li><strong>Fraud Prevention:</strong> Preventing duplicate free trials or abuse.</li>
-  <li><strong>Notifications:</strong> Sending service updates or daily reminders (only with your consent).</li>
+  <li>Expo push token, notification enable/disable status, timezone, and limited device/app metadata used for push delivery and troubleshooting.</li>
+  <li>Depending on platform and availability, this may include device model, operating system/platform, app version, or locale.</li>
 </ul>
 
-<h2>4. Legal Basis for Processing</h2>
+<h3>2.5 Diagnostics and Product Analytics</h3>
 <ul>
-  <li><strong>Contract Performance:</strong> To provide the Service you requested.</li>
-  <li><strong>Legal Obligation:</strong> To comply with tax or consumer protection laws.</li>
-  <li><strong>Legitimate Interests:</strong> Security, fraud prevention, and service improvement.</li>
-  <li><strong>Consent:</strong> For marketing notifications or optional data collection.</li>
+  <li><strong>Sentry:</strong> crash, error, and performance diagnostics. The app is configured not to send default personally identifiable information to Sentry.</li>
+  <li><strong>PostHog:</strong> when configured, pseudonymous account identifiers and app/product events used to understand service usage and improve the product.</li>
+  <li>Infrastructure providers such as Cloudflare, Railway, and Supabase may process IP addresses, request metadata, security logs, or similar technical information in the ordinary operation and protection of the Service.</li>
 </ul>
 
-<h2>5. Data Retention and Deletion</h2>
-<p>We retain personal data only as long as necessary to fulfill the purposes above.</p>
-
-<h3>5.1 Retention Periods</h3>
+<h3>2.6 Account Deletion Information</h3>
 <ul>
-  <li><strong>Account Data:</strong> Retained until you delete your account or withdraw consent.</li>
-  <li><strong>Subscription Records:</strong> Retained for 5 years as required by the Act on the Consumer Protection in Electronic Commerce (Korea), if applicable.</li>
-  <li><strong>Server Logs:</strong> Retained for up to 3 months for security audits.</li>
-  <li>
-    <strong>Fraud Prevention & Deletion Logs:</strong> To prevent service abuse (e.g., repeated free trials) and analyze deletion reasons, we retain 
-    <strong>pseudonymized email hashes and account deletion logs for up to one (1) year</strong> after account deletion. 
-    This data is not used for any other purpose and is permanently deleted after this period.
-  </li>
+  <li>If you choose to delete your account, we may process an optional deletion reason and deletion-workflow status information.</li>
+  <li>We may retain a pseudonymized email-derived identifier and limited audit/security metadata as described in Section 6.</li>
 </ul>
 
-<h2>6. Destruction Procedures and Methods (PIPA Compliance)</h2>
-<p>Once the retention period expires or the purpose of collection is achieved, we promptly destroy your personal data.</p>
+<h2>3. How We Use Personal Data</h2>
 <ul>
-  <li><strong>Destruction Procedure:</strong> Data flagged for deletion is separated from active storage and permanently deleted after the retention period.</li>
-  <li><strong>Destruction Method:</strong> Electronic files are permanently deleted using technical methods that make the data unrecoverable. Printed materials (if any) are shredded.</li>
+  <li><strong>Provide the Service:</strong> authenticate users, deliver account features, restore progress, save cards, and operate subscriptions.</li>
+  <li><strong>Localize daily features:</strong> use timezone information to determine the correct local Challenge day and notification schedule.</li>
+  <li><strong>Manage trials and prevent abuse:</strong> enforce one-time trial eligibility and reduce duplicate-trial or account abuse.</li>
+  <li><strong>Notifications:</strong> send reminders only after the relevant device notification permission is granted and the feature is enabled.</li>
+  <li><strong>Security and reliability:</strong> detect abuse, diagnose crashes, protect infrastructure, and maintain service availability.</li>
+  <li><strong>Product improvement:</strong> use limited analytics and aggregate usage patterns to understand how the Service performs.</li>
+  <li><strong>Legal and consumer obligations:</strong> keep records where applicable law requires us to do so and respond to lawful requests.</li>
 </ul>
+<div class="highlight-box">
+  <strong>No personalized news profiling:</strong> OneSpark’s Home insights are global editions. We do not use your private reading, quiz, or mission history to create a personalized news feed or targeted advertising profile.
+</div>
 
-<h2>7. Data Sharing and Third-Party Provision</h2>
-<p>We do not sell your personal data. We share data only with the following processors to operate the Service:</p>
+<h2>4. Legal Grounds</h2>
+<p>
+  The legal ground for processing depends on the data, purpose, and law that applies. Processing may be necessary to provide a service you request, based on your consent, required by law, or permitted for legitimate security, fraud-prevention, or service-improvement purposes where the applicable law allows such processing. Where a law requires separate consent for a specific activity, we will seek that consent.
+</p>
 
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 10px;">
-  <tr style="background-color: #f0f0f0;">
-    <th>Recipient</th>
-    <th>Purpose</th>
-    <th>Server Location (Region)</th>
+<h2>5. Service Providers and Data Sharing</h2>
+<p>
+  We do not sell personal data and we do not use personal data for targeted advertising. We disclose data only as needed to operate, secure, analyze, or support the Service, or when required by law.
+</p>
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Role / Data Involved</th>
+    <th>Typical Processing Location</th>
   </tr>
   <tr>
     <td><strong>Supabase</strong></td>
-    <td>Authentication & Database</td>
-    <td>Germany (EU)</td>
+    <td>Authentication, database, and serverless functions; account and service data.</td>
+    <td>Production database/auth infrastructure is configured in Germany (EU), with provider support infrastructure as applicable.</td>
   </tr>
   <tr>
     <td><strong>Railway</strong></td>
-    <td>Backend Hosting & Infrastructure</td>
-    <td>Netherlands (EU)</td>
-  </tr>
-  <tr>
-    <td><strong>RevenueCat</strong></td>
-    <td>Subscription Management</td>
-    <td>USA</td>
-  </tr>
-  <tr>
-    <td><strong>OpenAI (API)</strong></td>
-    <td>Content Summarization (AI)</td>
-    <td>USA</td>
+    <td>Backend hosting; request and application data required to serve authenticated APIs.</td>
+    <td>Production backend is configured in the Netherlands (EU).</td>
   </tr>
   <tr>
     <td><strong>Cloudflare</strong></td>
-    <td>Security & CDN</td>
-    <td>Global</td>
+    <td>Network proxy, security, abuse prevention, and CDN/edge services; IP and request metadata may be processed.</td>
+    <td>Global edge network.</td>
   </tr>
   <tr>
-    <td><strong>Google (Firebase)</strong></td>
-    <td>Push Notifications & Infrastructure</td>
-    <td>Global</td>
+    <td><strong>RevenueCat</strong></td>
+    <td>Subscription management; app user identifier, entitlement, store transaction, and purchase metadata.</td>
+    <td>Provider infrastructure may include the United States and other locations.</td>
+  </tr>
+  <tr>
+    <td><strong>Google / Apple</strong></td>
+    <td>Sign-in (where enabled), store billing, and platform push transport such as FCM/APNs.</td>
+    <td>Global provider infrastructure.</td>
   </tr>
   <tr>
     <td><strong>Expo</strong></td>
-    <td>Push Notification Delivery</td>
-    <td>USA</td>
+    <td>Push notification delivery; Expo push token and delivery metadata.</td>
+    <td>Provider infrastructure may include the United States and other locations.</td>
+  </tr>
+  <tr>
+    <td><strong>Sentry</strong></td>
+    <td>Crash, error, and performance monitoring; technical diagnostic data. Default PII transmission is disabled in the app configuration.</td>
+    <td>Depends on the configured Sentry account/region.</td>
+  </tr>
+  <tr>
+    <td><strong>PostHog</strong></td>
+    <td>Product analytics when configured; pseudonymous user ID and app/product events.</td>
+    <td>Depends on the configured PostHog host/region.</td>
   </tr>
 </table>
-<p style="margin-top: 8px; font-size: 0.85rem; color: #666;">
-  * Note: Location refers to the physical server region where data is processed. Both Germany and Netherlands are within the European Union (EU/EEA).
-</p>
 
-<h2>8. International Data Transfers</h2>
+<h3>5.1 AI Content Generation</h3>
 <p>
-  To provide the Service, your data may be transferred to and processed in countries outside of your residence (e.g., EU Member States, United States).
-  We ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) or reliance on adequacy decisions where applicable (e.g., Korea-EU Adequacy Decision).
+  We use the OpenAI API on our backend to assist with generating and reviewing OneSpark editorial content from public/editorial inputs. By design, OneSpark does <strong>not</strong> intentionally include your account details, saved cards, quiz answers, mission history, or other private user activity in content-generation prompts.
 </p>
 
-<h2>9. One-Time Trial Enforcement (Pseudonymized Data)</h2>
+<h2>6. Retention and Account Deletion</h2>
 <p>
-  To enforce the "One-Time Premium Trial" policy, we generate a <strong>non-reversible, pseudonymized hash</strong> of your account identifier.
-  This hash is used solely to check trial eligibility and is not used to identify you personally. It is retained for up to 1 year.
+  We keep personal data only for as long as reasonably necessary for the purpose for which it was collected, subject to legal, security, fraud-prevention, and dispute-resolution requirements.
 </p>
-
-<h2>10. Your Rights</h2>
-<p>You (and your legal representative if under 14) have the right to:</p>
 <ul>
-  <li>Request access to copies of your personal data.</li>
-  <li>Request correction or deletion of your data.</li>
-  <li>Withdraw consent (e.g., turn off notifications).</li>
-  <li>Object to processing.</li>
-</ul>
-<p>To exercise these rights, please contact us at <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>.</p>
-
-<h2>11. Children’s Privacy</h2>
-<p>
-  The Service is not intended for children under the age of 16. We do not knowingly collect information from children under 16.
-  If we discover such data has been collected without parental consent, we will delete such data <strong>without undue delay</strong>, in accordance with applicable law.
-</p>
-
-<h2>12. Security Measures</h2>
-<p>We implement the following measures to protect your data:</p>
-<ul>
-  <li><strong>Technical:</strong> Encryption of data in transit (HTTPS/TLS) and at rest; access controls.</li>
-  <li><strong>Administrative:</strong> Minimizing access to personal data to authorized personnel only.</li>
+  <li><strong>Account, challenge, archive, and settings data:</strong> generally retained while your account is active and deleted as part of account deletion, subject to the exceptions below.</li>
+  <li><strong>Subscription/transaction records:</strong> retained as needed for subscription operations and applicable legal obligations. Where Korean electronic-commerce record-retention rules apply, certain contract and payment/supply records may be retained for up to 5 years.</li>
+  <li><strong>Notification tokens:</strong> retained while needed for enabled notifications and removed or disabled when no longer needed or when the account is deleted.</li>
+  <li><strong>Diagnostics and analytics:</strong> retained according to our configured provider settings and only for as long as needed for security, debugging, analytics, or legal requirements.</li>
+  <li><strong>Deletion workflow records:</strong> limited records such as workflow status, pseudonymized identifiers, an optional deletion reason, and security/audit metadata may be retained after account deletion for as long as reasonably necessary to complete deletion, maintain security/audit reliability, resolve disputes, or satisfy legal obligations.</li>
 </ul>
 
-<h2>13. Changes to this Policy</h2>
+<h3>6.1 One-Time Trial Eligibility Identifier</h3>
 <p>
-  We may update this Privacy Policy. We will notify you of any <strong>material changes at least 7 days in advance</strong> through the App or via email.
+  To enforce the one-time Premium Trial, we derive a <strong>pseudonymized cryptographic hash</strong> from a normalized account email together with a secret server-side value. We do not store your plaintext email in the trial-eligibility record itself.
+</p>
+<p>
+  This identifier is not treated as anonymous data: it is a limited pseudonymous anti-abuse record. It may be retained after account deletion for as long as reasonably necessary to enforce one-time trial eligibility and prevent repeated trial abuse, unless applicable law requires earlier deletion. It is not used for advertising, content personalization, or unrelated profiling.
 </p>
 
-<h2>14. Privacy Officer & Contact (CPO)</h2>
+<h3>6.2 What Account Deletion Does Not Do</h3>
 <p>
-  In accordance with the Personal Information Protection Act, we have designated a Chief Privacy Officer (CPO) to handle inquiries and complaints regarding personal data.
+  Deleting your OneSpark account removes the account and associated app data as described above, but it does <strong>not</strong> by itself cancel an Apple App Store or Google Play subscription. Store subscriptions must be cancelled through the relevant store if you want to stop future renewals.
 </p>
+
+<h2>7. International Data Transfers</h2>
+<p>
+  Because our service providers operate across multiple countries, personal data may be processed outside your country of residence, including in the European Union, the United States, and locations used by global edge or platform providers. Where applicable law requires transfer safeguards, we rely on available contractual, organizational, technical, or other legally recognized safeguards appropriate to the transfer.
+</p>
+
+<h2>8. Your Privacy Rights</h2>
+<p>
+  Depending on the law that applies to you, you may have rights to request access, correction, deletion or erasure, withdraw consent, obtain information about processing, or raise a grievance. Some jurisdictions may provide additional rights, such as nomination rights under India’s data-protection framework when applicable.
+</p>
+<p>
+  You can delete your OneSpark account from the Profile screen. For other privacy requests or grievances, contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>. We may need to verify your identity before fulfilling certain requests.
+</p>
+
+<h2>9. Children’s Privacy and Age Eligibility</h2>
+<p>
+  OneSpark is not intended for anyone under <strong>18 years of age</strong>. We do not knowingly offer the Service to children and we do not provide a parent/guardian consent flow. If we learn that an under-18 user has provided personal data in violation of these Terms, we may suspend or delete the account and remove the associated data, subject to records we are legally or legitimately required to retain.
+</p>
+
+<h2>10. Security</h2>
+<ul>
+  <li><strong>Technical measures:</strong> HTTPS/TLS in transit, provider encryption at rest where supported, authentication controls, row-level security and backend access controls, and restricted service credentials.</li>
+  <li><strong>Operational measures:</strong> limited administrative access, monitoring, error handling, and account-deletion workflows designed to remove user data from active systems.</li>
+</ul>
+<p>
+  No system can be guaranteed to be completely secure. If a personal-data incident occurs, we will respond and provide notifications where applicable law requires them.
+</p>
+
+<h2>11. Changes to this Policy</h2>
+<p>
+  We may update this Privacy Policy as the Service or applicable law changes. We will provide notice of material changes in the manner and timing required by applicable law, which may include in-app notice, website notice, or email where appropriate.
+</p>
+
+<h2>12. Privacy and Grievance Contact</h2>
 <div class="highlight-box">
-  <strong>Chief Privacy Officer (CPO):</strong> Jiyong Choi<br />
-  <strong>Department:</strong> The Drawer at Dawn<br />
-  <strong>Contact:</strong> <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>
+  <strong>Privacy / Grievance Contact and Chief Privacy Officer (CPO):</strong> Jiyong Choi<br />
+  <strong>Organization:</strong> The Drawer at Dawn<br />
+  <strong>Email:</strong> <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>
 </div>
 
 <hr />
-<small>This English version prevails over any translations. However, for users in Korea, this policy is interpreted to comply with the PIPA.</small>
+<small>
+  This English version is the primary published version. Mandatory rights under the law of your jurisdiction are not waived by this Privacy Policy.
+</small>
 
 </body>
 </html>
