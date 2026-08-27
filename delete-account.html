@@ -92,11 +92,15 @@
   <li>account/profile data in the OneSpark application database;</li>
   <li>challenge and mission progress, quiz records, saved cards, app settings, and OneSpark subscription-state records tied to the account;</li>
   <li>notification registrations and account-linked notification records;</li>
-  <li>the corresponding Supabase Authentication user; and</li>
-  <li>the exact matching PostHog analytics person, with deletion requested for associated analytics events and recordings.</li>
+  <li>the corresponding Supabase Authentication user;</li>
+  <li>the exact matching PostHog analytics person, with deletion requested for associated analytics events and recordings; and</li>
+  <li>the RevenueCat customer record whose customer ID matches the OneSpark account ID.</li>
 </ul>
 <p>
-  PostHog or another external provider may complete an accepted privacy-deletion request asynchronously. OneSpark’s deletion workflow is designed to retry transient failures in required external deletion steps.
+  PostHog, RevenueCat, or another external provider may complete an accepted privacy-deletion request asynchronously. OneSpark’s deletion workflow is designed to retry transient failures in required external deletion steps.
+</p>
+<p>
+  Deleting the RevenueCat customer record does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.
 </p>
 <p>
   In our internal RevenueCat webhook audit ledger, direct OneSpark user-ID links are removed or anonymized when the OneSpark user is deleted. Limited non-user-linked webhook event/audit metadata may remain for idempotency, security, and audit purposes.
