@@ -162,7 +162,7 @@
     <td>Subscription management; app user identifier, entitlement, store transaction, and purchase metadata.</td>
     <td>Provider infrastructure may include the United States and other locations.</td>
     <td>When subscription status is created, checked, restored, changed, or reported by a store/webhook.</td>
-    <td>As needed for subscription operations, fraud prevention, transaction support, and applicable provider/store/legal requirements.</td>
+    <td>As needed for subscription operations, fraud prevention, transaction support, and applicable provider/store/legal requirements. Account deletion requests deletion of the matching RevenueCat customer record, subject to provider, store, and legal retention requirements.</td>
   </tr>
   <tr>
     <td><strong>Google / Apple</strong></td>
@@ -229,6 +229,7 @@
 <ul>
   <li><strong>Supabase Authentication:</strong> the deletion workflow deletes the corresponding authentication user.</li>
   <li><strong>PostHog:</strong> the deletion workflow requests deletion of the exact matching analytics person together with associated events and recordings. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
+  <li><strong>RevenueCat customer:</strong> the deletion workflow requests deletion of the RevenueCat customer record whose customer ID matches the OneSpark account ID. This does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.</li>
   <li><strong>RevenueCat webhook audit ledger:</strong> direct OneSpark user-ID links in our internal webhook ledger are removed or anonymized. Limited non-user-linked event/audit metadata may remain for idempotency, security, and audit purposes.</li>
   <li><strong>Retry behavior:</strong> if an external deletion step encounters a transient failure, the deletion workflow is designed to retry rather than silently mark the external deletion complete.</li>
 </ul>
