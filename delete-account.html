@@ -63,6 +63,9 @@
   <li>Select <strong>Delete my account</strong>.</li>
   <li>Review the deletion notice and confirm deletion.</li>
 </ol>
+<p>
+  An authenticated in-app request begins the OneSpark deletion workflow. If an external deletion step encounters a temporary failure, the workflow is designed to retry rather than silently treat the external deletion as complete.
+</p>
 
 <h2>Request deletion without the app</h2>
 <div class="card">
@@ -83,23 +86,37 @@
 
 <h2>What is deleted</h2>
 <p>
-  After a valid deletion request is completed, we remove the active OneSpark account and associated app data from our active systems, including account/profile data and service data tied to the account such as challenge progress, quiz records, saved cards, notification registrations, and active app settings, subject to the limited retention described below and in our Privacy Policy.
+  After a valid deletion request is processed, we remove the active OneSpark account and account-linked app data from our active application systems, subject to the limited retention described below. This includes data such as:
+</p>
+<ul>
+  <li>account/profile data in the OneSpark application database;</li>
+  <li>challenge and mission progress, quiz records, saved cards, app settings, and OneSpark subscription-state records tied to the account;</li>
+  <li>notification registrations and account-linked notification records;</li>
+  <li>the corresponding Supabase Authentication user; and</li>
+  <li>the exact matching PostHog analytics person, with deletion requested for associated analytics events and recordings.</li>
+</ul>
+<p>
+  PostHog or another external provider may complete an accepted privacy-deletion request asynchronously. OneSpark’s deletion workflow is designed to retry transient failures in required external deletion steps.
+</p>
+<p>
+  In our internal RevenueCat webhook audit ledger, direct OneSpark user-ID links are removed or anonymized when the OneSpark user is deleted. Limited non-user-linked webhook event/audit metadata may remain for idempotency, security, and audit purposes.
 </p>
 
 <h2>Limited data that may be retained</h2>
 <ul>
-  <li><strong>Deletion workflow records:</strong> limited completed deletion-audit records may be retained for up to 1 year after account deletion for deletion reliability, security, audit, and dispute-resolution purposes.</li>
+  <li><strong>Deletion workflow records:</strong> limited completed deletion-audit records, including a former internal account identifier, pseudonymized email-derived identifier, workflow status, optional deletion reason, timestamps, and limited security/audit metadata, may be retained for up to 1 year after account deletion for deletion reliability, security, audit, and dispute-resolution purposes.</li>
   <li><strong>One-time trial eligibility identifier:</strong> a pseudonymized cryptographic identifier may be retained after deletion as reasonably necessary to enforce one-time trial eligibility and prevent repeated trial abuse.</li>
-  <li><strong>Transaction or legal records:</strong> certain subscription, contract, payment, tax, fraud-prevention, or compliance records may be retained when applicable law or legitimate security obligations require it.</li>
+  <li><strong>Transaction or legal records:</strong> certain subscription, contract, payment, tax, fraud-prevention, complaint/dispute, or compliance records may be retained when applicable law, store rules, or legitimate security obligations require it.</li>
+  <li><strong>Provider-held records:</strong> app stores, payment providers, or subscription providers may hold records independently under their own transaction, refund, fraud-prevention, security, or legal-retention obligations. You may contact us if a provider-held privacy request is not resolved by the normal OneSpark deletion workflow.</li>
 </ul>
 <p>
-  These limited retained records are not used for advertising or unrelated personalization. See the <a href="privacy.html">OneSpark Privacy Policy</a> for the full retention description.
+  These limited retained records are not used for advertising or unrelated personalization. See the <a href="privacy.html">OneSpark Privacy Policy</a> for the full retention and provider-processing description.
 </p>
 
 <h2>Store subscriptions are separate</h2>
 <div class="note">
   <strong>Deleting your OneSpark account does not automatically cancel an Apple App Store or Google Play subscription.</strong>
-  If you have a paid store subscription, cancel it separately in the relevant store account settings if you want to stop future renewals.
+  If you have a paid store subscription, cancel it separately in the relevant store account settings if you want to stop future renewals. Account deletion and subscription cancellation are separate actions.
 </div>
 
 <h2>Contact</h2>
@@ -111,7 +128,7 @@
 </p>
 
 <hr />
-<small>Last updated: August 25, 2026</small>
+<small>Last updated: August 27, 2026</small>
 
 </body>
 </html>
