@@ -45,7 +45,7 @@
   Business Registration Number: <strong>162-50-00851</strong><br />
   Representative: <strong>Jiyong Choi</strong><br />
   Contact: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Last updated: August 27, 2026
+  Last updated: August 28, 2026
 </p>
 
 <hr />
@@ -194,6 +194,9 @@
   </tr>
 </table>
 <p>
+  Where a provider uses global infrastructure, dynamic request routing, or multiple subprocessors, the exact processing country may vary. In those cases, the table states that fact rather than implying that processing is limited to one country. We review our configured service regions and material provider changes and update this Policy when those details materially change.
+</p>
+<p>
   For transfers that are necessary to provide requested account, security, billing, or infrastructure functions, refusing the necessary processing or transfer may make the relevant feature or Service unavailable. Where a transfer or processing activity instead relies on consent, we will provide the refusal or withdrawal mechanism required by applicable law.
 </p>
 
@@ -211,10 +214,22 @@
   <li><strong>Subscription/transaction records:</strong> retained as needed for subscription operations and applicable legal obligations. Where Korean electronic-commerce record-retention rules apply, contract or withdrawal records and payment/supply records may be retained for up to 5 years, and consumer complaint/dispute records may be retained for up to 3 years.</li>
   <li><strong>Notification tokens:</strong> retained while needed for enabled notifications. The device/account token is removed on successful sign-out unregister, and account-linked notification registrations are deleted as part of account deletion.</li>
   <li><strong>Diagnostics and analytics:</strong> retained according to our configured provider settings and only for as long as needed for security, debugging, analytics, or legal requirements.</li>
-  <li><strong>Deletion workflow records:</strong> limited completed account-deletion audit records, such as workflow status, a former internal account identifier, pseudonymized email-derived identifier, optional deletion reason, attempt timestamps, and security/audit metadata, may be retained for up to 1 year after account deletion for deletion reliability, security, audit, and dispute-resolution purposes. Completed deletion records older than 1 year are automatically deleted. Trial-eligibility identifiers are subject to the separate retention described in Section 6.1.</li>
+  <li><strong>Deletion workflow records:</strong> limited completed account-deletion audit records, such as workflow status, a former internal account identifier, pseudonymized email-derived identifier, optional deletion reason, attempt timestamps, and security/audit metadata, may be retained for up to 1 year after account deletion for deletion reliability, security, audit, and dispute-resolution purposes. Completed deletion records older than 1 year are automatically deleted. Trial-eligibility identifiers are subject to the separate retention described in Section 6.2.</li>
 </ul>
 
-<h3>6.1 One-Time Trial Eligibility Identifier</h3>
+<h3>6.1 Destruction Procedure and Method</h3>
+<p>
+  When personal data is no longer needed for the purpose for which it was collected, or when an applicable retention period expires, we identify the affected records for destruction without undue delay unless applicable law requires or permits continued retention for a stated purpose.
+</p>
+<ul>
+  <li><strong>Active electronic records:</strong> records in active OneSpark application systems are deleted or de-identified using technical methods intended to make the data no longer reasonably recoverable or usable in ordinary service operations.</li>
+  <li><strong>Provider-held records:</strong> where applicable, we use available provider deletion mechanisms or APIs to request deletion or de-linking of account-associated data held by service providers.</li>
+  <li><strong>Backups and logs:</strong> copies may remain temporarily in provider backups, replicated storage, or security logs until the applicable backup/log rotation or retention period expires. Such copies are not returned to ordinary active use except where reasonably necessary for disaster recovery, security, or legal obligations.</li>
+  <li><strong>Legally retained records:</strong> data that must be kept for a statutory, security, fraud-prevention, or dispute-resolution period is restricted from ordinary service use to the extent reasonably practicable and is destroyed or de-identified when that retention period ends.</li>
+  <li><strong>Paper records:</strong> if personal data is ever maintained in paper form, it is destroyed using a method such as shredding or secure disposal that is intended to prevent practical reconstruction.</li>
+</ul>
+
+<h3>6.2 One-Time Trial Eligibility Identifier</h3>
 <p>
   To enforce the one-time Premium Trial, we derive a <strong>pseudonymized cryptographic hash</strong> from a normalized account email together with a secret server-side value. We do not store your plaintext email in the trial-eligibility record itself.
 </p>
@@ -222,7 +237,7 @@
   This identifier is not treated as anonymous data: it is a limited pseudonymous anti-abuse record. It may be retained after account deletion for as long as reasonably necessary to enforce one-time trial eligibility and prevent repeated trial abuse, unless applicable law requires earlier deletion. It is not used for advertising, content personalization, or unrelated profiling.
 </p>
 
-<h3>6.2 Account Deletion Workflow</h3>
+<h3>6.3 Account Deletion Workflow</h3>
 <p>
   When an authenticated account-deletion request is processed, OneSpark deletes account-linked application data from its active application database, including notification registrations, saved cards, quiz/challenge progress, subscription state stored by OneSpark, and user settings. The OneSpark user row is then removed.
 </p>
@@ -237,7 +252,7 @@
   Some records held independently by app stores, payment providers, or subscription providers may be subject to their own legal, transaction, refund, fraud-prevention, or platform retention obligations. If you have a privacy request concerning provider-held data that is not resolved by the normal OneSpark account-deletion workflow, contact us at <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a> and we will handle the request as required by applicable law.
 </p>
 
-<h3>6.3 What Account Deletion Does Not Do</h3>
+<h3>6.4 What Account Deletion Does Not Do</h3>
 <p>
   Deleting your OneSpark account removes the account and associated app data as described above, but it does <strong>not</strong> by itself cancel an Apple App Store or Google Play subscription. Store subscriptions must be cancelled through the relevant store if you want to stop future renewals.
 </p>
