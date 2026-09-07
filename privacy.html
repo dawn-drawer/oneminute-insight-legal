@@ -45,7 +45,7 @@
   Business Registration Number: <strong>162-50-00851</strong><br />
   Representative: <strong>Jiyong Choi</strong><br />
   Contact: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Last updated: September 5, 2026
+  Last updated: September 8, 2026
 </p>
 
 <hr />
@@ -96,7 +96,8 @@
 <ul>
   <li><strong>Sentry:</strong> crash, error, and performance diagnostics. The app is configured not to send default personally identifiable information to Sentry.</li>
   <li><strong>PostHog:</strong> pseudonymous account identifiers and a limited set of app/product events used to understand service usage and improve the product. We do not intentionally send email addresses, names, article titles, URLs, free-form user text, push tokens, or authentication tokens as PostHog event properties.</li>
-  <li>PostHog analytics is configured to begin only after the initial legal-onboarding acknowledgement has been completed. Where applicable law requires a separate consent choice, acknowledgement of this policy alone is not treated as that separate consent.</li>
+  <li><strong>Product Analytics is optional.</strong> PostHog remains off unless you affirmatively enable the separate Product Analytics choice during onboarding or later from the in-app Terms &amp; Privacy screen. Declining or later disabling Product Analytics does not prevent you from using OneSpark.</li>
+  <li>You may withdraw this analytics choice at any time from the in-app Terms &amp; Privacy screen. After an effective opt-out, OneSpark stops future PostHog product-event capture on that app installation, subject to data already lawfully processed and applicable retention requirements.</li>
   <li>Infrastructure providers such as Cloudflare, Railway, and Supabase may process IP addresses, request metadata, security logs, or similar technical information in the ordinary operation and protection of the Service.</li>
 </ul>
 
@@ -113,7 +114,7 @@
   <li><strong>Manage trials and prevent abuse:</strong> enforce one-time trial eligibility and reduce duplicate-trial or account abuse.</li>
   <li><strong>Notifications:</strong> send reminders only after the relevant device notification permission is granted and the feature is enabled.</li>
   <li><strong>Security and reliability:</strong> detect abuse, diagnose crashes, protect infrastructure, and maintain service availability.</li>
-  <li><strong>Product improvement:</strong> use limited analytics and aggregate usage patterns to understand how the Service performs.</li>
+  <li><strong>Product improvement:</strong> where you have enabled optional Product Analytics, use limited analytics and aggregate usage patterns to understand how the Service performs.</li>
   <li><strong>Legal and consumer obligations:</strong> keep records where applicable law requires us to do so and respond to lawful requests.</li>
 </ul>
 <div class="highlight-box">
@@ -122,7 +123,7 @@
 
 <h2>4. Legal Grounds</h2>
 <p>
-  The legal ground for processing depends on the data, purpose, and law that applies. Processing may be necessary to provide a service you request, based on your consent, required by law, or permitted for legitimate security, fraud-prevention, or service-improvement purposes where the applicable law allows such processing. Where a law requires separate consent for a specific activity, we will seek that consent and provide the legally required method to withdraw it. Merely acknowledging that you have seen this Privacy Policy is not treated as separate consent where the law requires a distinct consent action.
+  The legal ground for processing depends on the data, purpose, and law that applies. Processing may be necessary to provide a service you request, based on your consent, required by law, or permitted for legitimate security, fraud-prevention, or service-improvement purposes where the applicable law allows such processing. Where a law requires separate consent for a specific activity, we will seek that consent and provide the legally required method to withdraw it. Merely acknowledging that you have seen this Privacy Policy is not treated as separate consent where the law requires a distinct consent action. OneSpark’s optional PostHog Product Analytics is enabled only after a separate affirmative user choice and can be disabled later without losing access to the Service.
 </p>
 
 <h2>5. Service Providers and Data Sharing</h2>
@@ -188,10 +189,10 @@
   </tr>
   <tr>
     <td><strong>PostHog</strong></td>
-    <td>Product analytics; pseudonymous user ID and limited app/product events.</td>
+    <td>Optional product analytics; pseudonymous user ID and limited app/product events.</td>
     <td>Production is configured for PostHog EU Cloud.</td>
-    <td>After analytics is permitted to initialize and qualifying product events occur, using encrypted network transport.</td>
-    <td>According to our configured analytics retention; account deletion requests deletion of the matched person and associated events/recordings as described in Section 6.</td>
+    <td>Only after you affirmatively enable Product Analytics, when qualifying product events occur, using encrypted network transport.</td>
+    <td>According to our configured analytics retention; you may disable future capture at any time in the app, and account deletion requests deletion of the matched person and associated events/recordings as described in Section 6.</td>
   </tr>
 </table>
 <p>
@@ -245,7 +246,7 @@
 </p>
 <ul>
   <li><strong>Supabase Authentication:</strong> the deletion workflow deletes the corresponding authentication user.</li>
-  <li><strong>PostHog:</strong> the deletion workflow requests deletion of the exact matching analytics person together with associated events and recordings. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
+  <li><strong>PostHog:</strong> if a matching analytics person exists, the deletion workflow requests deletion of that exact matching analytics person together with associated events and recordings. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
   <li><strong>RevenueCat customer:</strong> the deletion workflow requests deletion of the RevenueCat customer record whose customer ID matches the OneSpark account ID. This does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.</li>
   <li><strong>RevenueCat webhook audit ledger:</strong> direct OneSpark user-ID links in our internal webhook ledger are removed or anonymized. Limited non-user-linked event/audit metadata may remain for idempotency, security, and audit purposes.</li>
   <li><strong>Retry behavior:</strong> if an external deletion step encounters a transient failure, the deletion workflow is designed to retry rather than silently mark the external deletion complete.</li>
@@ -312,13 +313,13 @@
   <tr>
     <td><strong>PostHog</strong></td>
     <td><a href="mailto:privacy@posthog.com">privacy@posthog.com</a></td>
-    <td>Overseas processing for limited product analytics. We do not treat the user's acknowledgement of this Privacy Policy itself as separate overseas-transfer consent. Where separate consent or another statutory basis is required for this transfer, that basis must be satisfied before the transfer is made.</td>
+    <td>Optional overseas processing for limited product analytics. OneSpark does not treat acknowledgement of this Privacy Policy as consent to this transfer. Where consent is the applicable basis, the transfer begins only after the separate affirmative Product Analytics choice is enabled, and that choice can be withdrawn in the app without preventing use of OneSpark.</td>
   </tr>
 </table>
 
 <h3>7.2 Refusing or Withdrawing an Overseas Transfer</h3>
 <p>
-  You may contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a> to ask about an overseas transfer, exercise an applicable objection or withdrawal right, or request deletion of your account. You can disable notifications to stop future notification-related processing for that feature, and you can delete your account through the Profile screen or the Account Deletion page. Where a transfer relies on consent, you may refuse or withdraw that consent using the method presented for that consent or by contacting us; a consent-based transfer will not be made after an effective refusal or withdrawal, subject to data already lawfully processed and any applicable legal-retention requirements. Where an overseas processing entrustment or storage is necessary to provide a requested core account, billing, security, or infrastructure function, refusing that necessary transfer may prevent the relevant feature or the Service from being provided.
+  You may contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a> to ask about an overseas transfer, exercise an applicable objection or withdrawal right, or request deletion of your account. You can disable notifications to stop future notification-related processing for that feature, and you can delete your account through the Profile screen or the Account Deletion page. For optional PostHog Product Analytics, you can refuse the choice during onboarding or withdraw it later from the in-app Terms &amp; Privacy screen; doing so does not prevent use of OneSpark. Where another transfer relies on consent, you may refuse or withdraw that consent using the method presented for that consent or by contacting us; a consent-based transfer will not be made after an effective refusal or withdrawal, subject to data already lawfully processed and any applicable legal-retention requirements. Where an overseas processing entrustment or storage is necessary to provide a requested core account, billing, security, or infrastructure function, refusing that necessary transfer may prevent the relevant feature or the Service from being provided.
 </p>
 
 <h2>8. Your Privacy Rights</h2>
@@ -326,7 +327,7 @@
   Depending on the law that applies to you, you may have rights to request access, correction, deletion or erasure, withdraw consent, obtain information about processing, or raise a grievance. Some jurisdictions may provide additional rights, such as nomination rights under India’s data-protection framework when applicable.
 </p>
 <p>
-  You can delete your OneSpark account from the Profile screen. If you do not have access to the app, you can also initiate deletion through our <a href="delete-account.html">Account Deletion page</a>. For other privacy requests or grievances, contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>. We may need to verify your identity before fulfilling certain requests.
+  You can disable optional Product Analytics from the in-app Terms &amp; Privacy screen. You can delete your OneSpark account from the Profile screen. If you do not have access to the app, you can also initiate deletion through our <a href="delete-account.html">Account Deletion page</a>. For other privacy requests or grievances, contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>. We may need to verify your identity before fulfilling certain requests.
 </p>
 
 <h2>9. Children’s Privacy and Age Eligibility</h2>
