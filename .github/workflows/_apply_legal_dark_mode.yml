@@ -28,47 +28,47 @@ jobs:
               Path('delete-account.html'),
           ]
 
-          dark_css = r'''
-    :root { color-scheme: light dark; }
-    @media (prefers-color-scheme: dark) {
-      body {
-        color: #e9edf5;
-        background-color: #0f1115;
-      }
-      h1, h2, h3 { color: #f7f8fa; }
-      a { color: #8ab4f8; }
-      hr { border-top-color: #343a46; }
-      small { color: #aeb6c2; }
-      .highlight-box,
-      .note {
-        background-color: #1b2028;
-        border-left-color: #76839a;
-      }
-      .card {
-        background: #171a21;
-        border-color: #343a46;
-      }
-      table { color: #e9edf5; }
-      th, td { border-color: #39414e; }
-      th { background: #202631; }
-      .primary-link {
-        background: #8fb1ff;
-        color: #111827;
-      }
-    }
-'''
+          dark_css = """
+              :root { color-scheme: light dark; }
+              @media (prefers-color-scheme: dark) {
+                body {
+                  color: #e9edf5;
+                  background-color: #0f1115;
+                }
+                h1, h2, h3 { color: #f7f8fa; }
+                a { color: #8ab4f8; }
+                hr { border-top-color: #343a46; }
+                small { color: #aeb6c2; }
+                .highlight-box,
+                .note {
+                  background-color: #1b2028;
+                  border-left-color: #76839a;
+                }
+                .card {
+                  background: #171a21;
+                  border-color: #343a46;
+                }
+                table { color: #e9edf5; }
+                th, td { border-color: #39414e; }
+                th { background: #202631; }
+                .primary-link {
+                  background: #8fb1ff;
+                  color: #111827;
+                }
+              }
+          """
 
           for path in files:
               text = path.read_text(encoding='utf-8')
               if 'prefers-color-scheme: dark' in text:
                   raise SystemExit(f'{path}: dark-mode CSS already exists')
-              if '</style>' not in text:
+              if '  </style>' not in text:
                   raise SystemExit(f'{path}: </style> anchor missing')
               text = text.replace('  </style>', dark_css + '  </style>', 1)
               path.write_text(text, encoding='utf-8')
           PY
 
-      - name: Verify only intended HTML changes
+      - name: Verify intended HTML changes
         run: |
           git diff --check
           grep -q 'prefers-color-scheme: dark' terms.html
