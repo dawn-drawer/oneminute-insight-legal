@@ -33,33 +33,17 @@
       font-size: 0.9rem;
       border-left: 4px solid #555;
     }
-
     :root { color-scheme: light dark; }
     @media (prefers-color-scheme: dark) {
-      body {
-        color: #e9edf5;
-        background-color: #0f1115;
-      }
+      body { color: #e9edf5; background-color: #0f1115; }
       h1, h2, h3 { color: #f7f8fa; }
       a { color: #8ab4f8; }
       hr { border-top-color: #343a46; }
       small { color: #aeb6c2; }
-      .highlight-box,
-      .note {
-        background-color: #1b2028;
-        border-left-color: #76839a;
-      }
-      .card {
-        background: #171a21;
-        border-color: #343a46;
-      }
+      .highlight-box { background-color: #1b2028; border-left-color: #76839a; }
       table { color: #e9edf5; }
       th, td { border-color: #39414e; }
       th { background: #202631; }
-      .primary-link {
-        background: #8fb1ff;
-        color: #111827;
-      }
     }
   </style>
 </head>
@@ -73,17 +57,17 @@
   Business Registration Number: <strong>162-50-00851</strong><br />
   Representative: <strong>Jiyong Choi</strong><br />
   Contact: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Last updated: September 9, 2026
+  Last updated: September 10, 2026
 </p>
 
 <hr />
 
 <h2>1. Scope</h2>
 <p>
-  This Privacy Policy explains how The Drawer at Dawn (“we”, “us”, or “our”) handles personal data when you use the OneSpark mobile application and related services (“Service”). We aim to process personal data transparently and in accordance with laws that apply to us and to our users, including the Personal Information Protection Act of the Republic of Korea and, where applicable as relevant provisions take effect, India’s Digital Personal Data Protection Act, 2023 and Digital Personal Data Protection Rules, 2025.
+  This Privacy Policy explains how The Drawer at Dawn (“we”, “us”, or “our”) handles personal data when you use the OneSpark mobile application and related services (“Service”). We aim to process personal data transparently and in accordance with laws that apply to the Service and its users, including, where applicable as relevant provisions take effect, India’s Digital Personal Data Protection Act, 2023 and Digital Personal Data Protection Rules, 2025.
 </p>
 <p>
-  India’s data-protection framework has a phased commencement schedule. We will update our notices, consent and withdrawal mechanisms, grievance handling, and other controls as additional requirements become applicable to the Service.
+  OneSpark is not commercially offered or marketed to consumers in the Republic of Korea. Availability is determined through our distribution settings and the markets in which we choose to offer the Service.
 </p>
 <p>
   OneSpark is intended only for users who are <strong>18 years of age or older</strong>. We do not provide a parental-consent onboarding flow for minors.
@@ -106,11 +90,11 @@
   <li>We do <strong>not</strong> store your full payment-card number. Payments are processed by Apple App Store or Google Play and their payment partners.</li>
 </ul>
 
-<h3>2.3 Challenge, Archive, and Preference Data</h3>
+<h3>2.3 Challenge, Archive, Settings, and Legal Records</h3>
 <ul>
   <li>Quiz answers and results, mission-completion records, streak/progress information, and saved cards.</li>
   <li>Settings needed to operate the Service, such as timezone and notification preferences.</li>
-  <li><strong>Consent records:</strong> for signed-in accounts, we store the current legal-policy version accepted, the acceptance timestamp, the optional Product Analytics choice, and the time that analytics choice was last updated. These records are linked to the OneSpark account so that the account’s own choices can be restored on another device or after signing in again.</li>
+  <li><strong>Legal acknowledgement records:</strong> for signed-in accounts, we may keep the current legal-policy version acknowledged and the acknowledgement timestamp. Guest-mode acknowledgement may be stored locally on the device.</li>
   <li><strong>On-device cache:</strong> to improve loading performance and support limited offline use, OneSpark may store account-scoped copies of Challenge, Archive, subscription-status, notification-preference, and related service data in local app storage on your device.</li>
 </ul>
 
@@ -124,10 +108,10 @@
 <h3>2.5 Diagnostics and Product Analytics</h3>
 <ul>
   <li><strong>Sentry:</strong> crash, error, and performance diagnostics. The app is configured not to send default personally identifiable information to Sentry.</li>
-  <li><strong>PostHog:</strong> pseudonymous account identifiers and a limited set of app/product events used to understand service usage and improve the product. We do not intentionally send email addresses, names, article titles, URLs, free-form user text, push tokens, or authentication tokens as PostHog event properties.</li>
-  <li><strong>Product Analytics is optional and account-scoped.</strong> Product Analytics is not enabled by the introductory product-onboarding screens. After you sign in, OneSpark presents Privacy choices that separate the required Terms/Privacy/age confirmation from the optional Product Analytics &amp; Overseas Transfer choice. PostHog remains off unless a signed-in user affirmatively enables that optional choice. <strong>Guest mode does not send OneSpark product-analytics events to PostHog.</strong> Declining or later disabling Product Analytics does not prevent you from using OneSpark.</li>
-  <li><strong>Consent scope:</strong> for a signed-in user, the legal acknowledgement and Product Analytics preference are stored for that specific OneSpark account and are checked again when that account signs in. One account’s choice is not silently attributed to another account that later uses the same device. In Guest mode, only the required legal acknowledgement is stored locally for that app installation/device context; Product Analytics remains disabled.</li>
-  <li>A signed-in user may withdraw the optional analytics choice at any time from the in-app Terms &amp; Privacy screen, and the updated choice is saved to that account. Guest mode keeps Product Analytics disabled. After an effective signed-in opt-out, OneSpark stops future PostHog product-event capture and future optional analytics transfers for that account. Disabling Product Analytics does not by itself erase analytics data already lawfully processed; account deletion or a verified erasure request triggers the applicable provider-deletion process, subject to provider processing time and any legally required retention.</li>
+  <li><strong>PostHog:</strong> for signed-in accounts, OneSpark sends a pseudonymous internal account identifier and a limited set of product-usage events to PostHog EU Cloud in Frankfurt, Germany, to understand service usage and improve the product.</li>
+  <li>We do not intentionally send email addresses, names, article titles, URLs, free-form user text, push tokens, or authentication tokens as PostHog event properties.</li>
+  <li><strong>Guest mode does not send OneSpark product events to PostHog.</strong></li>
+  <li>On account change or sign-out, the app resets the prior PostHog identity before another signed-in account may be associated with product events.</li>
   <li>Infrastructure providers such as Cloudflare, Railway, and Supabase may process IP addresses, request metadata, security logs, or similar technical information in the ordinary operation and protection of the Service.</li>
 </ul>
 
@@ -144,7 +128,7 @@
   <li><strong>Manage trials and prevent abuse:</strong> enforce one-time trial eligibility and reduce duplicate-trial or account abuse.</li>
   <li><strong>Notifications:</strong> send reminders only after the relevant device notification permission is granted and the feature is enabled.</li>
   <li><strong>Security and reliability:</strong> detect abuse, diagnose crashes, protect infrastructure, and maintain service availability.</li>
-  <li><strong>Product improvement:</strong> where you have enabled optional Product Analytics, use limited analytics and aggregate usage patterns to understand how the Service performs.</li>
+  <li><strong>Product improvement:</strong> use limited signed-in product analytics and aggregate usage patterns to understand how the Service performs and where it can be improved.</li>
   <li><strong>Legal and consumer obligations:</strong> keep records where applicable law requires us to do so and respond to lawful requests.</li>
 </ul>
 <div class="highlight-box">
@@ -153,7 +137,7 @@
 
 <h2>4. Legal Grounds</h2>
 <p>
-  The legal ground for processing depends on the data, purpose, and law that applies. Processing may be necessary to provide a service you request, based on your consent, required by law, or permitted for legitimate security, fraud-prevention, or service-improvement purposes where the applicable law allows such processing. Where a law requires separate consent for a specific activity, we will seek that consent and provide the legally required method to withdraw it. Merely acknowledging that you have seen this Privacy Policy is not treated as separate consent where the law requires a distinct consent action. OneSpark’s optional PostHog Product Analytics is enabled only after a separate affirmative user choice and can be disabled later without losing access to the Service.
+  The legal ground for processing depends on the data, purpose, and law that applies. Processing may be necessary to provide a service you request, permitted for legitimate security, fraud-prevention, reliability, or product-improvement purposes where applicable law allows such processing, based on consent where consent is required, or required by law. Where applicable law requires a distinct consent action for a particular processing activity, we will provide that action rather than treating mere acknowledgement of this Privacy Policy as consent.
 </p>
 
 <h2>5. Service Providers and Data Sharing</h2>
@@ -198,7 +182,7 @@
   </tr>
   <tr>
     <td><strong>Google / Apple</strong></td>
-    <td>Sign-in (where enabled), store billing, and platform push transport such as FCM/APNs.</td>
+    <td>Sign-in, store billing, and platform push transport such as FCM/APNs.</td>
     <td>Global provider infrastructure.</td>
     <td>When you use sign-in, store purchase/subscription, or platform notification functionality.</td>
     <td>According to the applicable platform account, billing, security, and legal-retention rules.</td>
@@ -219,159 +203,61 @@
   </tr>
   <tr>
     <td><strong>PostHog</strong></td>
-    <td>Optional product analytics; pseudonymous user ID and limited app/product events.</td>
+    <td>Signed-in product analytics; pseudonymous internal OneSpark account ID and limited app/product events.</td>
     <td>Germany (EU; PostHog EU Cloud, Frankfurt).</td>
-    <td>Only after you affirmatively enable Product Analytics, when qualifying product events occur, using encrypted network transport.</td>
-    <td>Previously collected analytics may remain while the OneSpark account is active until account deletion, a verified erasure request, or applicable provider retention/deletion rules remove them. Disabling Product Analytics stops future capture and transfer but does not by itself erase analytics already processed. Account deletion requests deletion of the matched person and associated events/recordings as described in Section 6.</td>
+    <td>For signed-in accounts, when qualifying product events occur, using encrypted network transport. Guest mode does not send OneSpark product events to PostHog.</td>
+    <td>Analytics may remain while the OneSpark account is active until account deletion, a verified erasure request, or applicable provider retention/deletion rules remove them. Account deletion requests deletion of the matched person and associated events/recordings, if any, as described in Section 6.</td>
   </tr>
 </table>
 <p>
-  Where a provider uses global infrastructure, dynamic request routing, or multiple subprocessors, the exact processing country may vary. In those cases, the table states that fact rather than implying that processing is limited to one country. We review our configured service regions and material provider changes and update this Policy when those details materially change.
-</p>
-<p>
-  For transfers that are necessary to provide requested account, security, billing, or infrastructure functions, refusing the necessary processing or transfer may make the relevant feature or Service unavailable. Where a transfer or processing activity instead relies on consent, we will provide the refusal or withdrawal mechanism required by applicable law.
+  OpenAI is used separately in OneSpark’s editorial content-generation workflow. Private user activity is not intentionally included in OneSpark’s AI content-generation prompts.
 </p>
 
-<h3>5.1 AI Content Generation</h3>
+<h2>6. Retention and Deletion</h2>
 <p>
-  We use the OpenAI API on our backend to assist with generating and reviewing OneSpark editorial content from public/editorial inputs. By design, OneSpark does <strong>not</strong> intentionally include your account details, saved cards, quiz answers, mission history, or other private user activity in content-generation prompts.
-</p>
-
-<h2>6. Retention and Account Deletion</h2>
-<p>
-  We keep personal data only for as long as reasonably necessary for the purpose for which it was collected, subject to legal, security, fraud-prevention, and dispute-resolution requirements.
+  We keep personal data only for as long as reasonably necessary for the purposes described in this Policy, subject to provider operations, security needs, dispute resolution, fraud prevention, and legal obligations.
 </p>
 <ul>
-  <li><strong>Account, challenge, archive, consent, and settings data:</strong> generally retained while your account is active and deleted as part of account deletion, subject to the exceptions below.</li>
-  <li><strong>On-device cache:</strong> local app caches may be refreshed or replaced as the Service is used, and some temporary cache entries may expire automatically. OneSpark clears account-scoped private caches during successful sign-out. Device operating-system behavior, clearing app data, or uninstalling the app may also remove local app storage.</li>
-  <li><strong>Subscription/transaction records:</strong> retained as needed for subscription operations and applicable legal obligations. Where Korean electronic-commerce record-retention rules apply, contract or withdrawal records and payment/supply records may be retained for up to 5 years, and consumer complaint/dispute records may be retained for up to 3 years.</li>
-  <li><strong>Notification tokens:</strong> retained while needed for enabled notifications. The device/account token is removed on successful sign-out unregister, and account-linked notification registrations are deleted as part of account deletion.</li>
-  <li><strong>Diagnostics and analytics:</strong> retained according to our configured provider settings and only for as long as needed for security, debugging, analytics, or legal requirements.</li>
-  <li><strong>Deletion workflow records:</strong> limited completed account-deletion audit records, such as workflow status, a former internal account identifier, pseudonymized email-derived identifier, optional deletion reason, attempt timestamps, and security/audit metadata, may be retained for up to 1 year after account deletion for deletion reliability, security, audit, and dispute-resolution purposes. Completed deletion records older than 1 year are automatically deleted. Trial-eligibility identifiers are subject to the separate retention described in Section 6.2.</li>
+  <li><strong>Active account/service data:</strong> generally retained while the account is active or the relevant feature requires it.</li>
+  <li><strong>Deletion workflow records:</strong> limited completed account-deletion audit records may be retained for up to 1 year for deletion reliability, security, audit, and dispute-resolution purposes.</li>
+  <li><strong>Backups and logs:</strong> copies may remain temporarily in provider backups, replicated storage, or security logs until the applicable rotation or retention period expires.</li>
+  <li><strong>Legally retained records:</strong> records that must be kept for statutory, security, fraud-prevention, transaction, or dispute-resolution reasons may be restricted from ordinary service use and deleted or de-identified when the applicable retention period ends.</li>
 </ul>
 
-<h3>6.1 Destruction Procedure and Method</h3>
+<h3>6.1 One-Time Trial Eligibility Identifier</h3>
 <p>
-  When personal data is no longer needed for the purpose for which it was collected, or when an applicable retention period expires, we identify the affected records for destruction without undue delay unless applicable law requires or permits continued retention for a stated purpose.
-</p>
-<ul>
-  <li><strong>Active electronic records:</strong> records in active OneSpark application systems are deleted or de-identified using technical methods intended to make the data no longer reasonably recoverable or usable in ordinary service operations.</li>
-  <li><strong>Provider-held records:</strong> where applicable, we use available provider deletion mechanisms or APIs to request deletion or de-linking of account-associated data held by service providers.</li>
-  <li><strong>Backups and logs:</strong> copies may remain temporarily in provider backups, replicated storage, or security logs until the applicable backup/log rotation or retention period expires. Such copies are not returned to ordinary active use except where reasonably necessary for disaster recovery, security, or legal obligations.</li>
-  <li><strong>Legally retained records:</strong> data that must be kept for a statutory, security, fraud-prevention, or dispute-resolution period is restricted from ordinary service use to the extent reasonably practicable and is destroyed or de-identified when that retention period ends.</li>
-  <li><strong>Paper records:</strong> if personal data is ever maintained in paper form, it is destroyed using a method such as shredding or secure disposal that is intended to prevent practical reconstruction.</li>
-</ul>
-
-<h3>6.2 One-Time Trial Eligibility Identifier</h3>
-<p>
-  To enforce the one-time Premium Trial, we derive a <strong>pseudonymized cryptographic hash</strong> from a normalized account email together with a secret server-side value. We do not store your plaintext email in the trial-eligibility record itself.
-</p>
-<p>
-  This identifier is not treated as anonymous data: it is a limited pseudonymous anti-abuse record. It may be retained after account deletion for as long as reasonably necessary to enforce one-time trial eligibility and prevent repeated trial abuse, unless applicable law requires earlier deletion. It is not used for advertising, content personalization, or unrelated profiling.
+  To enforce the one-time Premium Trial, we derive a <strong>pseudonymized cryptographic hash</strong> from a normalized account email together with a secret server-side value. We do not store your plaintext email in the trial-eligibility record itself. This limited anti-abuse identifier may remain after account deletion for as long as reasonably necessary to enforce one-time trial eligibility and prevent repeated trial abuse, unless applicable law requires earlier deletion. It is not used for advertising, content personalization, or unrelated profiling.
 </p>
 
-<h3>6.3 Account Deletion Workflow</h3>
+<h3>6.2 Account Deletion Workflow</h3>
 <p>
-  When an authenticated account-deletion request is processed, OneSpark deletes account-linked application data from its active application database, including notification registrations, saved cards, quiz/challenge progress, account-scoped legal and analytics consent records, subscription state stored by OneSpark, and user settings. The OneSpark user row is then removed.
+  When an authenticated account-deletion request is processed, OneSpark deletes account-linked application data from its active application database, including notification registrations, saved cards, quiz/challenge progress, account-scoped legal acknowledgement records, subscription state stored by OneSpark, and user settings. The OneSpark user row is then removed.
 </p>
 <ul>
   <li><strong>Supabase Authentication:</strong> the deletion workflow deletes the corresponding authentication user.</li>
-  <li><strong>PostHog:</strong> if a matching analytics person exists, the deletion workflow requests deletion of that exact matching analytics person together with associated events and recordings. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
+  <li><strong>PostHog:</strong> if a matching analytics person exists, the deletion workflow requests deletion of that exact matching analytics person together with associated events and recordings, if any. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
   <li><strong>RevenueCat customer:</strong> the deletion workflow requests deletion of the RevenueCat customer record whose customer ID matches the OneSpark account ID. This does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.</li>
   <li><strong>RevenueCat webhook audit ledger:</strong> direct OneSpark user-ID links in our internal webhook ledger are removed or anonymized. Limited non-user-linked event/audit metadata may remain for idempotency, security, and audit purposes.</li>
   <li><strong>Retry behavior:</strong> if an external deletion step encounters a transient failure, the deletion workflow is designed to retry rather than silently mark the external deletion complete.</li>
 </ul>
 <p>
-  Some records held independently by app stores, payment providers, or subscription providers may be subject to their own legal, transaction, refund, fraud-prevention, or platform retention obligations. If you have a privacy request concerning provider-held data that is not resolved by the normal OneSpark account-deletion workflow, contact us at <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a> and we will handle the request as required by applicable law.
+  Deleting your OneSpark account does <strong>not</strong> by itself cancel an Apple App Store or Google Play subscription. Store subscriptions must be cancelled through the relevant store if you want to stop future renewals.
 </p>
 
-<h3>6.4 What Account Deletion Does Not Do</h3>
+<h2>7. International Processing</h2>
 <p>
-  Deleting your OneSpark account removes the account and associated app data as described above, but it does <strong>not</strong> by itself cancel an Apple App Store or Google Play subscription. Store subscriptions must be cancelled through the relevant store if you want to stop future renewals.
+  Because our service providers operate across multiple countries, personal data may be processed outside your country of residence, including in the European Union, the United States, and locations used by global edge or platform providers. Section 5 describes the principal providers, data categories and purposes, typical processing regions, timing/method, and retention basis.
 </p>
-
-<h2>7. International Data Transfers</h2>
 <p>
-  Because our service providers operate across multiple countries, personal data may be processed outside your country of residence, including in the European Union, the United States, and locations used by global edge or platform providers. Section 5 describes the principal recipients, categories of data and purposes, typical transfer countries or regions, transfer timing and method, and retention basis.
-</p>
-
-<h3>7.1 Korean Personal Information Protection Act (PIPA)</h3>
-<p>
-  Where the Korean Personal Information Protection Act applies to an overseas transfer by OneSpark, we handle the transfer under Article 28-8 and disclose the applicable transfer basis. For overseas processing entrustment or storage that is necessary to enter into or perform the contract for a Service or feature you request, we rely, where its conditions are met, on Article 28-8(1)(3) together with the disclosures in this Policy. A platform provider may instead collect information directly from you or act independently under its own privacy terms for certain sign-in, billing, or platform functions; those activities are not automatically treated as a transfer by OneSpark. If a particular overseas transfer requires separate consent or another statutory basis, we will obtain or satisfy that basis before making that transfer.
-</p>
-<table>
-  <tr>
-    <th>Recipient / Service</th>
-    <th>Recipient Contact</th>
-    <th>Transfer Classification / PIPA Basis</th>
-  </tr>
-  <tr>
-    <td><strong>Supabase</strong></td>
-    <td><a href="mailto:privacy@supabase.com">privacy@supabase.com</a></td>
-    <td>Overseas processing entrustment/storage for account authentication, database, and server functions. Where necessary to provide requested account-backed features, Article 28-8(1)(3) applies subject to its statutory conditions and this disclosure.</td>
-  </tr>
-  <tr>
-    <td><strong>Railway</strong></td>
-    <td><a href="mailto:privacy@railway.com">privacy@railway.com</a></td>
-    <td>Overseas processing entrustment for backend hosting and API processing. Where necessary to provide the requested Service, Article 28-8(1)(3) applies subject to its statutory conditions and this disclosure.</td>
-  </tr>
-  <tr>
-    <td><strong>Cloudflare</strong></td>
-    <td><a href="mailto:privacyquestions@cloudflare.com">privacyquestions@cloudflare.com</a></td>
-    <td>Overseas/global processing for network delivery, security, abuse prevention, and edge services. Where necessary to deliver and secure the requested Service, Article 28-8(1)(3) applies subject to its statutory conditions and this disclosure.</td>
-  </tr>
-  <tr>
-    <td><strong>RevenueCat</strong></td>
-    <td><a href="mailto:compliance@revenuecat.com">compliance@revenuecat.com</a></td>
-    <td>Overseas processing entrustment for subscription and entitlement management. Where necessary to provide purchased or restored subscription functions, Article 28-8(1)(3) applies subject to its statutory conditions and this disclosure. App stores may separately process transaction information under their own terms.</td>
-  </tr>
-  <tr>
-    <td><strong>Google / Apple</strong></td>
-    <td><a href="https://policies.google.com/privacy">Google Privacy</a> / <a href="https://www.apple.com/legal/privacy/">Apple Privacy</a></td>
-    <td>Platform sign-in, store billing, and push transport where enabled. The provider may directly collect information under its own privacy terms. To the extent OneSpark makes an overseas transfer necessary for a user-requested platform function, Article 28-8(1)(3) applies only where its statutory conditions are satisfied; otherwise the applicable lawful basis is used before transfer.</td>
-  </tr>
-  <tr>
-    <td><strong>Expo (650 Industries, Inc.)</strong></td>
-    <td><a href="https://expo.dev/contact">Expo Contact</a></td>
-    <td>Overseas processing entrustment for push-token registration and push delivery when notifications are enabled. Where necessary to provide that requested feature, Article 28-8(1)(3) applies subject to its statutory conditions and this disclosure.</td>
-  </tr>
-  <tr>
-    <td><strong>Sentry</strong></td>
-    <td><a href="https://sentry.io/privacy/">Sentry Privacy / Contact</a></td>
-    <td>Overseas diagnostic processing for error, performance, security, and reliability monitoring. Article 28-8(1)(3) is relied on only to the extent the processing entrustment/storage is necessary to provide and secure the Service and its statutory conditions are met; otherwise another lawful basis, including separate consent where required, must apply before transfer.</td>
-  </tr>
-  <tr>
-    <td><strong>PostHog</strong></td>
-    <td><a href="mailto:privacy@posthog.com">privacy@posthog.com</a></td>
-    <td>Optional overseas processing for limited product analytics. OneSpark does not treat acknowledgement of this Privacy Policy as consent to this transfer. Where consent is the applicable basis, the transfer begins only after the separate affirmative Product Analytics &amp; Overseas Transfer choice is enabled. The pre-transfer choice states the transferred data categories, PostHog recipient/contact, Germany destination, transfer timing/method, purpose, retention/deletion conditions, and refusal effect. The choice can be refused or withdrawn without preventing use of OneSpark.</td>
-  </tr>
-</table>
-
-<h3>7.1.1 Optional PostHog Product Analytics Transfer</h3>
-<p>
-  Before optional PostHog analytics transfer begins, OneSpark presents a separate affirmative choice with the following information:
-</p>
-<ul>
-  <li><strong>Data transferred:</strong> a pseudonymous OneSpark account identifier and limited product-usage events for a signed-in user who affirmatively enables Product Analytics. Guest mode does not send OneSpark product-analytics events to PostHog.</li>
-  <li><strong>Recipient and contact:</strong> PostHog, Inc.; <a href="mailto:privacy@posthog.com">privacy@posthog.com</a>.</li>
-  <li><strong>Destination:</strong> Germany (EU), using OneSpark’s PostHog EU Cloud project in Frankfurt.</li>
-  <li><strong>Timing and method:</strong> only after the user affirmatively enables the optional choice, when qualifying product events occur, through encrypted network connections.</li>
-  <li><strong>Purpose:</strong> product analytics and service improvement. The data is not used by OneSpark for targeted advertising or personalized news.</li>
-  <li><strong>Retention / deletion:</strong> previously collected signed-in analytics may remain while the OneSpark account is active until account deletion, a verified erasure request, or applicable provider retention/deletion rules remove them. Disabling Product Analytics stops future capture and transfer but does not by itself erase analytics already processed. Provider-side privacy deletion may complete asynchronously after an accepted deletion request.</li>
-  <li><strong>Refusal / withdrawal effect:</strong> the choice is optional. Leaving it off or disabling it later does not prevent use of OneSpark.</li>
-</ul>
-
-<h3>7.2 Refusing or Withdrawing an Overseas Transfer</h3>
-<p>
-  You may contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a> to ask about an overseas transfer, exercise an applicable objection or withdrawal right, or request deletion of your account. You can disable notifications to stop future notification-related processing for that feature, and you can delete your account through the Profile screen or the Account Deletion page. For optional PostHog Product Analytics, a signed-in user can refuse the choice when OneSpark presents the post-login Privacy choices or withdraw it later from the in-app Terms &amp; Privacy screen; doing so does not prevent use of OneSpark. Guest mode keeps Product Analytics disabled and therefore makes no optional PostHog product-analytics transfer. Where another transfer relies on consent, you may refuse or withdraw that consent using the method presented for that consent or by contacting us; a consent-based transfer will not be made after an effective refusal or withdrawal, subject to data already lawfully processed and any applicable legal-retention requirements. Where an overseas processing entrustment or storage is necessary to provide a requested core account, billing, security, or infrastructure function, refusing that necessary transfer may prevent the relevant feature or the Service from being provided.
+  Where applicable law requires a particular safeguard, notice, contractual measure, consent, or other lawful basis for cross-border processing, we will use the mechanism required for the relevant processing activity and jurisdiction.
 </p>
 
 <h2>8. Your Privacy Rights</h2>
 <p>
-  Depending on the law that applies to you, you may have rights to request access, correction, deletion or erasure, withdraw consent, obtain information about processing, or raise a grievance. Some jurisdictions may provide additional rights, such as nomination rights under India’s data-protection framework when applicable.
+  Depending on the law that applies to you, you may have rights to request access, correction, deletion or erasure, withdraw a consent where processing is based on consent, obtain information about processing, or raise a grievance. Some jurisdictions may provide additional rights, such as nomination rights under India’s data-protection framework when applicable.
 </p>
 <p>
-  You can disable optional Product Analytics from the in-app Terms &amp; Privacy screen. For signed-in users, that preference is associated with the active OneSpark account; Guest-mode choices remain local to the app installation/device context. You can delete your OneSpark account from the Profile screen. If you do not have access to the app, you can also initiate deletion through our <a href="delete-account.html">Account Deletion page</a>. For other privacy requests or grievances, contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>. We may need to verify your identity before fulfilling certain requests.
+  You can delete your OneSpark account from the Profile screen. If you do not have access to the app, you can also initiate deletion through our <a href="delete-account.html">Account Deletion page</a>. For other privacy requests or grievances, contact <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>. We may need to verify your identity before fulfilling certain requests.
 </p>
 
 <h2>9. Children’s Privacy and Age Eligibility</h2>
@@ -395,7 +281,7 @@
 
 <h2>12. Privacy and Grievance Contact</h2>
 <div class="highlight-box">
-  <strong>Privacy / Grievance Contact and Chief Privacy Officer (CPO):</strong> Jiyong Choi<br />
+  <strong>Privacy / Grievance Contact:</strong> Jiyong Choi<br />
   <strong>Organization:</strong> The Drawer at Dawn<br />
   <strong>Email:</strong> <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a>
 </div>
