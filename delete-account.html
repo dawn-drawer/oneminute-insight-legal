@@ -121,11 +121,11 @@
   <li>challenge and mission progress, quiz records, saved cards, app settings, and OneSpark subscription-state records tied to the account;</li>
   <li>notification registrations and account-linked notification records;</li>
   <li>the corresponding Supabase Authentication user;</li>
-  <li>the exact matching PostHog analytics person, with deletion requested for associated analytics events and recordings; and</li>
+  <li>for legacy analytics created by earlier app versions that linked PostHog to the OneSpark account ID, the exact matching PostHog analytics person, with deletion requested for associated analytics events and recordings; and</li>
   <li>the RevenueCat customer record whose customer ID matches the OneSpark account ID.</li>
 </ul>
 <p>
-  PostHog, RevenueCat, or another external provider may complete an accepted privacy-deletion request asynchronously. OneSpark’s deletion workflow is designed to retry transient failures in required external deletion steps.
+  Current OneSpark PostHog analytics is session-only and is not linked to the OneSpark account ID, so current anonymous session events cannot be located through an account-deletion request. For legacy account-linked analytics, PostHog, RevenueCat, or another external provider may complete an accepted privacy-deletion request asynchronously. OneSpark’s deletion workflow is designed to retry transient failures in required external deletion steps.
 </p>
 <p>
   Deleting the RevenueCat customer record does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.
@@ -160,7 +160,7 @@
 </p>
 
 <hr />
-<small>Last updated: August 27, 2026</small>
+<small>Last updated: October 1, 2026</small>
 
 </body>
 </html>
