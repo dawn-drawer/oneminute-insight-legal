@@ -109,8 +109,8 @@
 <ul>
   <li><strong>Sentry:</strong> crash, error, and performance diagnostics. The app is configured not to send default personally identifiable information to Sentry.</li>
   <li><strong>PostHog:</strong> for signed-in accounts, OneSpark sends a limited set of session-level product-usage events to PostHog EU Cloud in Frankfurt, Germany, to understand in-session feature usage and improve the product.</li>
-  <li>OneSpark does <strong>not</strong> send its Supabase/OneSpark account ID, email address, name, article titles, URLs, free-form user text, push tokens, advertising/device identifiers, or authentication tokens as PostHog event properties.</li>
-  <li>The PostHog SDK is configured with in-memory persistence. Its SDK-generated anonymous analytics identity is not stored by OneSpark across a cold app restart, and OneSpark does not call PostHog identify/alias methods to link analytics to an account.</li>
+  <li>OneSpark does <strong>not</strong> intentionally send its Supabase/OneSpark account ID, email address, name, article titles, URLs, free-form user text, push tokens, platform advertising identifiers, or authentication tokens as custom PostHog event properties.</li>
+  <li>The PostHog SDK necessarily assigns an SDK-generated anonymous analytics identifier and may attach limited SDK/app technical properties needed to process analytics events. The SDK is configured with in-memory persistence, so its anonymous analytics identity is not stored by OneSpark across a cold app restart, and OneSpark does not call PostHog identify/alias methods to link analytics to an account.</li>
   <li>Automatic PostHog app-lifecycle capture and session replay are disabled, and an event allow-list restricts product analytics to declared OneSpark events.</li>
   <li><strong>Guest mode does not send OneSpark product events to PostHog.</strong></li>
   <li>On account change or sign-out, the current in-memory PostHog identity is reset before analytics can later be enabled again.</li>
