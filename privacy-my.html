@@ -112,8 +112,8 @@
 <ul>
   <li><strong>Sentry:</strong> diagnostik ranap, ralat dan prestasi. Aplikasi dikonfigurasi supaya tidak menghantar maklumat pengenalan peribadi secara lalai kepada Sentry.</li>
   <li><strong>PostHog:</strong> bagi akaun yang telah log masuk, OneSpark menghantar set terhad acara penggunaan produk pada peringkat sesi ke PostHog EU Cloud di Frankfurt, Jerman, untuk memahami penggunaan ciri dalam satu sesi dan menambah baik produk.</li>
-  <li>OneSpark <strong>tidak</strong> menghantar ID akaun Supabase/OneSpark, alamat e-mel, nama, tajuk artikel, URL, teks bebas pengguna, token push, pengenal pengiklanan/peranti atau token pengesahan sebagai sifat acara PostHog.</li>
-  <li>SDK PostHog dikonfigurasi menggunakan penyimpanan dalam memori sahaja. Identiti analitik tanpa nama yang dijana oleh SDK tidak disimpan oleh OneSpark merentasi permulaan semula aplikasi secara penuh, dan OneSpark tidak memanggil kaedah identify/alias PostHog untuk memautkan analitik kepada akaun.</li>
+  <li>OneSpark <strong>tidak</strong> sengaja menghantar ID akaun Supabase/OneSpark, alamat e-mel, nama, tajuk artikel, URL, teks bebas pengguna, token push, pengenal pengiklanan platform atau token pengesahan sebagai sifat acara tersuai PostHog.</li>
+  <li>SDK PostHog semestinya memberikan pengenal analitik tanpa nama yang dijana oleh SDK dan mungkin melampirkan sifat teknikal SDK/aplikasi yang terhad untuk memproses acara analitik. SDK dikonfigurasi menggunakan penyimpanan dalam memori sahaja, maka identiti analitik tanpa nama itu tidak disimpan oleh OneSpark merentasi permulaan semula aplikasi secara penuh, dan OneSpark tidak memanggil kaedah identify/alias PostHog untuk memautkan analitik kepada akaun.</li>
   <li>Tangkapan automatik kitar hayat aplikasi PostHog dan session replay dinyahdayakan, dan senarai kebenaran acara mengehadkan analitik produk kepada acara OneSpark yang telah ditetapkan.</li>
   <li><strong>Mod tetamu tidak menghantar acara produk OneSpark kepada PostHog.</strong></li>
   <li>Apabila akaun berubah atau anda log keluar, identiti PostHog dalam memori semasa ditetapkan semula sebelum analitik boleh didayakan semula kemudian.</li>
