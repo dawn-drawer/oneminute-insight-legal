@@ -57,7 +57,7 @@
   Business Registration Number: <strong>162-50-00851</strong><br />
   Representative: <strong>Jiyong Choi</strong><br />
   Contact: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Last updated: September 10, 2026
+  Last updated: October 1, 2026
 </p>
 
 <hr />
@@ -108,10 +108,12 @@
 <h3>2.5 Diagnostics and Product Analytics</h3>
 <ul>
   <li><strong>Sentry:</strong> crash, error, and performance diagnostics. The app is configured not to send default personally identifiable information to Sentry.</li>
-  <li><strong>PostHog:</strong> for signed-in accounts, OneSpark sends a pseudonymous internal account identifier and a limited set of product-usage events to PostHog EU Cloud in Frankfurt, Germany, to understand service usage and improve the product.</li>
-  <li>We do not intentionally send email addresses, names, article titles, URLs, free-form user text, push tokens, or authentication tokens as PostHog event properties.</li>
+  <li><strong>PostHog:</strong> for signed-in accounts, OneSpark sends a limited set of session-level product-usage events to PostHog EU Cloud in Frankfurt, Germany, to understand in-session feature usage and improve the product.</li>
+  <li>OneSpark does <strong>not</strong> send its Supabase/OneSpark account ID, email address, name, article titles, URLs, free-form user text, push tokens, advertising/device identifiers, or authentication tokens as PostHog event properties.</li>
+  <li>The PostHog SDK is configured with in-memory persistence. Its SDK-generated anonymous analytics identity is not stored by OneSpark across a cold app restart, and OneSpark does not call PostHog identify/alias methods to link analytics to an account.</li>
+  <li>Automatic PostHog app-lifecycle capture and session replay are disabled, and an event allow-list restricts product analytics to declared OneSpark events.</li>
   <li><strong>Guest mode does not send OneSpark product events to PostHog.</strong></li>
-  <li>On account change or sign-out, the app resets the prior PostHog identity before another signed-in account may be associated with product events.</li>
+  <li>On account change or sign-out, the current in-memory PostHog identity is reset before analytics can later be enabled again.</li>
   <li>Infrastructure providers such as Cloudflare, Railway, and Supabase may process IP addresses, request metadata, security logs, or similar technical information in the ordinary operation and protection of the Service.</li>
 </ul>
 
@@ -128,7 +130,7 @@
   <li><strong>Manage trials and prevent abuse:</strong> enforce one-time trial eligibility and reduce duplicate-trial or account abuse.</li>
   <li><strong>Notifications:</strong> send reminders only after the relevant device notification permission is granted and the feature is enabled.</li>
   <li><strong>Security and reliability:</strong> detect abuse, diagnose crashes, protect infrastructure, and maintain service availability.</li>
-  <li><strong>Product improvement:</strong> use limited signed-in product analytics and aggregate usage patterns to understand how the Service performs and where it can be improved.</li>
+  <li><strong>Product improvement:</strong> use limited signed-in, session-level product analytics and aggregate platform usage reports to understand how the Service performs and where it can be improved. OneSpark does not use PostHog to build cross-launch account-level behavioral histories.</li>
   <li><strong>Legal and consumer obligations:</strong> keep records where applicable law requires us to do so and respond to lawful requests.</li>
 </ul>
 <div class="highlight-box">
@@ -203,10 +205,10 @@
   </tr>
   <tr>
     <td><strong>PostHog</strong></td>
-    <td>Signed-in product analytics; pseudonymous internal OneSpark account ID and limited app/product events.</td>
+    <td>Signed-in session-level product analytics; SDK-generated anonymous in-memory identity and a limited allow-list of app/product events. OneSpark account IDs are not sent to PostHog for current analytics.</td>
     <td>Germany (EU; PostHog EU Cloud, Frankfurt).</td>
-    <td>For signed-in accounts, when qualifying product events occur, using encrypted network transport. Guest mode does not send OneSpark product events to PostHog.</td>
-    <td>Analytics may remain while the OneSpark account is active until account deletion, a verified erasure request, or applicable provider retention/deletion rules remove them. Account deletion requests deletion of the matched person and associated events/recordings, if any, as described in Section 6.</td>
+    <td>For signed-in accounts, when qualifying product events occur, using encrypted network transport. The analytics identity is held in memory only and is not intentionally persisted across a cold app restart. Guest mode does not send OneSpark product events to PostHog.</td>
+    <td>Current session-only analytics is not linked to a OneSpark account and therefore cannot be located by OneSpark account ID. Legacy account-linked PostHog analytics created by earlier app versions remains subject to the legacy deletion workflow described in Section 6 and applicable provider retention/deletion rules.</td>
   </tr>
 </table>
 <p>
@@ -235,7 +237,7 @@
 </p>
 <ul>
   <li><strong>Supabase Authentication:</strong> the deletion workflow deletes the corresponding authentication user.</li>
-  <li><strong>PostHog:</strong> if a matching analytics person exists, the deletion workflow requests deletion of that exact matching analytics person together with associated events and recordings, if any. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
+  <li><strong>PostHog:</strong> current OneSpark analytics is session-only and is not linked to the OneSpark account ID, so current anonymous session events cannot be looked up by account ID. For legacy analytics created by earlier app versions that linked PostHog to the OneSpark account ID, the deletion workflow continues to request deletion of the exact matching analytics person together with associated events and recordings, if any. Provider-side privacy deletion may be completed asynchronously after the request is accepted.</li>
   <li><strong>RevenueCat customer:</strong> the deletion workflow requests deletion of the RevenueCat customer record whose customer ID matches the OneSpark account ID. This does not cancel an Apple App Store or Google Play subscription, and provider/store records may remain where required for transaction, refund, fraud-prevention, security, or legal purposes.</li>
   <li><strong>RevenueCat webhook audit ledger:</strong> direct OneSpark user-ID links in our internal webhook ledger are removed or anonymized. Limited non-user-linked event/audit metadata may remain for idempotency, security, and audit purposes.</li>
   <li><strong>Retry behavior:</strong> if an external deletion step encounters a transient failure, the deletion workflow is designed to retry rather than silently mark the external deletion complete.</li>
