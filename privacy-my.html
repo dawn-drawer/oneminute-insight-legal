@@ -57,7 +57,7 @@
   Nombor Pendaftaran Perniagaan: <strong>162-50-00851</strong><br />
   Wakil: <strong>Jiyong Choi</strong><br />
   Hubungan: <a href="mailto:contact@dawn-drawer.com">contact@dawn-drawer.com</a><br />
-  Kemas kini terakhir: 10 September 2026
+  Kemas kini terakhir: 1 Oktober 2026
 </p>
 <p>
   <strong>Bahasa:</strong> Bahasa Melayu | <a href="privacy.html" hreflang="en">English</a>
@@ -111,10 +111,13 @@
 <h3>2.5 Diagnostik dan Analitik Produk</h3>
 <ul>
   <li><strong>Sentry:</strong> diagnostik ranap, ralat dan prestasi. Aplikasi dikonfigurasi supaya tidak menghantar maklumat pengenalan peribadi secara lalai kepada Sentry.</li>
-  <li><strong>PostHog:</strong> bagi akaun yang telah log masuk, OneSpark menghantar pengenal akaun dalaman berpseudonim dan set acara penggunaan produk yang terhad ke PostHog EU Cloud di Frankfurt, Jerman, untuk memahami penggunaan Perkhidmatan dan menambah baik produk.</li>
-  <li>Kami tidak sengaja menghantar alamat e-mel, nama, tajuk artikel, URL, teks bebas pengguna, token push atau token pengesahan sebagai sifat acara PostHog.</li>
+  <li><strong>PostHog:</strong> bagi akaun yang telah log masuk, OneSpark menghantar set terhad acara penggunaan produk pada peringkat sesi ke PostHog EU Cloud di Frankfurt, Jerman, untuk memahami penggunaan ciri dalam satu sesi dan menambah baik produk.</li>
+  <li>OneSpark <strong>tidak</strong> sengaja menghantar ID akaun Supabase/OneSpark, alamat e-mel, nama, tajuk artikel, URL, teks bebas pengguna, token push, pengenal pengiklanan platform atau token pengesahan sebagai sifat acara tersuai PostHog.</li>
+  <li>SDK PostHog semestinya memberikan pengenal analitik tanpa nama yang dijana oleh SDK dan mungkin melampirkan sifat teknikal SDK/aplikasi yang terhad untuk memproses acara analitik. SDK dikonfigurasi menggunakan penyimpanan dalam memori sahaja, maka identiti analitik tanpa nama itu tidak disimpan oleh OneSpark merentasi permulaan semula aplikasi secara penuh, dan OneSpark tidak memanggil kaedah identify/alias PostHog untuk memautkan analitik kepada akaun.</li>
+  <li>Versi aplikasi OneSpark terdahulu mungkin telah memautkan analitik PostHog kepada ID akaun dalaman OneSpark yang berpseudonim. Reka bentuk analitik semasa menghapuskan pautan tersebut; rekod lama yang dipautkan kepada akaun mungkin kekal sehingga dibuang melalui aliran kerja pemadaman lama atau proses penyimpanan/pemadaman penyedia yang terpakai.</li>
+  <li>Tangkapan automatik kitar hayat aplikasi PostHog dan session replay dinyahdayakan, dan senarai kebenaran acara mengehadkan analitik produk kepada acara OneSpark yang telah ditetapkan.</li>
   <li><strong>Mod tetamu tidak menghantar acara produk OneSpark kepada PostHog.</strong></li>
-  <li>Apabila akaun berubah atau anda log keluar, aplikasi menetapkan semula identiti PostHog terdahulu sebelum akaun lain yang telah log masuk boleh dikaitkan dengan acara produk.</li>
+  <li>Apabila akaun berubah atau anda log keluar, identiti PostHog dalam memori semasa ditetapkan semula sebelum analitik boleh didayakan semula kemudian.</li>
   <li>Penyedia infrastruktur seperti Cloudflare, Railway dan Supabase mungkin memproses alamat IP, metadata permintaan, log keselamatan atau maklumat teknikal seumpamanya dalam operasi dan perlindungan biasa Perkhidmatan.</li>
 </ul>
 
@@ -131,7 +134,7 @@
   <li><strong>Mengurus percubaan dan mencegah penyalahgunaan:</strong> menguatkuasakan kelayakan percubaan sekali sahaja dan mengurangkan penyalahgunaan percubaan berulang atau akaun.</li>
   <li><strong>Notifikasi:</strong> menghantar peringatan hanya selepas kebenaran notifikasi peranti berkaitan diberikan dan ciri tersebut didayakan.</li>
   <li><strong>Keselamatan dan kebolehpercayaan:</strong> mengesan penyalahgunaan, mendiagnosis ranap, melindungi infrastruktur dan mengekalkan ketersediaan Perkhidmatan.</li>
-  <li><strong>Penambahbaikan produk:</strong> menggunakan analitik produk terhad bagi pengguna yang telah log masuk dan corak penggunaan agregat untuk memahami prestasi Perkhidmatan dan perkara yang boleh ditambah baik.</li>
+  <li><strong>Penambahbaikan produk:</strong> menggunakan analitik produk terhad pada peringkat sesi bagi pengguna yang telah log masuk dan laporan penggunaan platform secara agregat untuk memahami prestasi Perkhidmatan dan perkara yang boleh ditambah baik. OneSpark tidak menggunakan PostHog untuk membina sejarah tingkah laku pada peringkat akaun merentasi pelancaran aplikasi.</li>
   <li><strong>Kewajipan undang-undang dan pengguna:</strong> menyimpan rekod apabila dikehendaki undang-undang yang terpakai dan memberi respons kepada permintaan yang sah.</li>
 </ul>
 <div class="highlight-box">
@@ -206,10 +209,10 @@
   </tr>
   <tr>
     <td><strong>PostHog</strong></td>
-    <td>Analitik produk pengguna yang telah log masuk; ID akaun dalaman OneSpark berpseudonim dan acara aplikasi/produk terhad.</td>
+    <td>Bagi versi aplikasi yang menggunakan reka bentuk analitik semasa: analitik produk pada peringkat sesi bagi pengguna yang telah log masuk dengan identiti tanpa nama dalam memori yang dijana oleh SDK serta senarai kebenaran terhad bagi acara aplikasi/produk. ID akaun OneSpark tidak dihantar ke PostHog oleh reka bentuk ini. Versi terdahulu mungkin telah menggunakan ID akaun dalaman berpseudonim.</td>
     <td>Jerman (EU; PostHog EU Cloud, Frankfurt).</td>
-    <td>Bagi akaun yang telah log masuk, apabila acara produk yang layak berlaku, menggunakan pengangkutan rangkaian terenkripsi. Mod tetamu tidak menghantar acara produk OneSpark kepada PostHog.</td>
-    <td>Analitik mungkin kekal semasa akaun OneSpark aktif sehingga pemadaman akaun, permintaan penghapusan yang disahkan, atau peraturan penyimpanan/pemadaman penyedia yang terpakai menghapuskannya. Pemadaman akaun meminta pemadaman individu analytics yang sepadan serta acara/rakaman berkaitan, jika ada, seperti diterangkan dalam Seksyen 6.</td>
+    <td>Bagi akaun yang telah log masuk, apabila acara produk yang layak berlaku, menggunakan pengangkutan rangkaian terenkripsi. Identiti analitik disimpan dalam memori sahaja dan tidak sengaja dikekalkan merentasi permulaan semula aplikasi secara penuh. Mod tetamu tidak menghantar acara produk OneSpark kepada PostHog.</td>
+    <td>Analitik sesi semasa tidak dipautkan kepada akaun OneSpark dan oleh itu tidak boleh dicari menggunakan ID akaun OneSpark. Analitik PostHog lama yang dicipta oleh versi aplikasi terdahulu dan dipautkan kepada akaun kekal tertakluk pada aliran kerja pemadaman lama yang diterangkan dalam Seksyen 6 serta peraturan penyimpanan/pemadaman penyedia yang terpakai.</td>
   </tr>
 </table>
 <p>
@@ -238,7 +241,7 @@
 </p>
 <ul>
   <li><strong>Supabase Authentication:</strong> aliran kerja pemadaman memadamkan pengguna pengesahan yang sepadan.</li>
-  <li><strong>PostHog:</strong> jika individu analytics yang sepadan wujud, aliran kerja pemadaman meminta pemadaman individu tersebut berserta acara dan rakaman berkaitan, jika ada. Pemadaman privasi di pihak penyedia mungkin diselesaikan secara asynchronous selepas permintaan diterima.</li>
+  <li><strong>PostHog:</strong> analitik pada peringkat sesi yang dihasilkan oleh versi aplikasi yang menggunakan reka bentuk analitik semasa tidak dipautkan kepada ID akaun OneSpark, maka acara sesi tanpa nama tersebut tidak boleh dicari menggunakan ID akaun. Bagi analitik lama yang dicipta oleh versi aplikasi terdahulu yang memautkan PostHog kepada ID akaun OneSpark, aliran kerja pemadaman terus meminta pemadaman individu analitik yang sepadan dengan tepat bersama acara dan rakaman berkaitan, jika ada. Pemadaman privasi di pihak penyedia mungkin diselesaikan secara asynchronous selepas permintaan diterima.</li>
   <li><strong>Pelanggan RevenueCat:</strong> aliran kerja pemadaman meminta pemadaman rekod pelanggan RevenueCat yang ID pelanggannya sepadan dengan ID akaun OneSpark. Ini tidak membatalkan langganan Apple App Store atau Google Play, dan rekod penyedia/kedai mungkin kekal jika diperlukan untuk transaksi, bayaran balik, pencegahan penipuan, keselamatan atau tujuan undang-undang.</li>
   <li><strong>Lejar audit webhook RevenueCat:</strong> pautan terus kepada ID pengguna OneSpark dalam lejar webhook dalaman kami dibuang atau dinyahnamakan. Metadata acara/audit terhad yang tidak dipautkan kepada pengguna mungkin kekal untuk idempotensi, keselamatan dan audit.</li>
   <li><strong>Tingkah laku cuba semula:</strong> jika langkah pemadaman luaran mengalami kegagalan sementara, aliran kerja pemadaman direka untuk mencuba semula dan tidak menandakan pemadaman luaran sebagai lengkap secara senyap.</li>
